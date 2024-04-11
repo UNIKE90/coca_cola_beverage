@@ -38,6 +38,7 @@
     scroll-snap-align: start;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
   }
   
 .slide h2{display: none;}
@@ -99,13 +100,13 @@ section h2{
 
 /* 회사소개 슬라이드 */
 .cSwiper2 {
-  height: 80%;
+  height: 70vh;
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 .cSwiper {
-  height: 10%;
+  height: 10vh;
   box-sizing: border-box;
   padding: 10px 0;
 }
@@ -159,7 +160,7 @@ section h2{
 .p_cont .img_wrap{
   width: 80%;
   margin: 0 auto;
-  height: 350px;
+  height: 50vh;
   overflow: hidden;
 }
 .p_cont img{
@@ -174,12 +175,18 @@ section h2{
 }
 
 /* 버튼 스와이퍼 */
+.pSwiper{
+  width: 85%;
+}
 .pSwiper .swiper-wrapper{
   display: flex;
   align-items: center;
 }
 .pSwiper .swiper-slide{
   background: none;
+}
+.pSwiper svg{
+  width: 60%;
 }
 
 /* 외부 버튼 누르면 바뀜 */
