@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코카콜라음료(주)</title>
+  <!-- 아이콘폰트 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 스와이프 슬라이더 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- 1. css 초기화 -->
+  <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <!-- 2. 공통서식 -->
+  <link rel="stylesheet" href="./css/base.css" type="text/css">
+  <!-- 3. 메인서식 -->
+  <link rel="stylesheet" href="./css/main.css" type="text/css">
+  <style>
+  </style>
+    <script>
+      // 사용자가 접속한 디바이스 기기 체크하기
+      let mobile_keys = new Array('iPhone', 'iPad', 'Android', 'BlackBerry', 'Windows Phone', 'Window CE', 'LG', 'MOT', 'SAMSUNG', 'SonyErisson', 'Nokia');
+  
+      // 만약에 웹페이지 주소뒤에 move_pc_screen 값이 없다면
+      if(document.URL.match('move_pc_screen')) mobile_keys=null;
+  
+      // 위 배열값 개수만큼 반복하여 검사를 하고 모바일 사용자이면 아래 내용을 실행
+      for(i in mobile_keys){
+        // URL파라미터에 'move_pc_screen'가 포합되어 있을 때 아래 내용 적용
+        if(navigator.userAgent.match(mobile_keys[i]) !=null){
+          location.href='http://sunje1013.dothome.co.kr/0401/하림펫푸드/m/index.html';
+          break;
+        }
+      }
+    </script>
+</head>
+<body>
+  <div id="wrapper">
+    <!-- 헤더영역 시작 -->
+    <input type="checkbox" name="toggle" id="toggle">
+    <header class="">
+      <div class="h_bottom">
+        <div class="h_warp">
+          <!-- 상단로고 -->
+          <h1>
+            <a href="index.html" title="메인로고">
+              <svg width="150" height="46" viewBox="0 0 150 46" fill="current" xmlns="http://www.w3.org/2000/svg">
+              <path d="M105.08 3.53422C105.08 3.53422 102.268 4.61341 98.9981 8.08845C95.7279 11.5635 93.8233 15.4712 95.2329 16.5104C95.7743 16.9054 97.0228 16.9806 99.2883 15.0056C101.379 13.2555 103.02 11.0615 104.083 8.59631C105.546 5.15653 105.08 3.57654 105.08 3.53892M122.977 9.786C119.344 7.9897 116.688 5.789 113.925 4.42767C111.289 3.12276 109.584 2.57729 107.453 2.85238C107.156 2.90347 106.862 2.97418 106.575 3.06398C106.575 3.06398 107.672 6.67774 103.305 12.7485C98.8811 18.9039 94.8671 18.8616 93.7258 17.1711C92.5309 15.3865 94.0745 11.7492 96.6522 8.51166C99.3517 5.12597 104.092 2.31866 104.092 2.31866C104.092 2.31866 102.581 1.42756 98.8689 3.45663C95.2475 5.42692 89.0143 10.1293 83.2299 18.0598C77.4454 25.9903 76.2992 30.3541 75.4701 33.7892C74.6409 37.2243 75.3945 40.9039 79.3451 40.9039C83.2957 40.9039 87.895 35.0941 89.1923 33.0744C91.6042 29.3125 93.1771 23.5427 89.8947 24.3351C88.2778 24.7254 86.9683 26.4512 86.1416 28.1134C85.6197 29.1811 85.2206 30.3007 84.9515 31.4521C83.8046 31.9079 82.7273 32.5122 81.7496 33.2484C80.6619 34.0252 79.6454 34.8905 78.711 35.8347C78.711 35.8347 78.7257 33.0885 80.996 28.6448C83.2664 24.2011 87.4341 22.172 89.7947 21.9816C91.9212 21.817 94.689 23.5569 92.3431 29.9756C89.9971 36.3943 83.0762 44.1979 75.8066 44.2943C69.0979 44.3836 64.7083 36.1286 74.0459 21.7229C84.3809 5.80781 96.5034 0.924409 100.439 0.381287C104.375 -0.161835 105.656 1.5122 105.656 1.5122C108.025 0.575036 110.584 0.168264 113.14 0.322507C117.946 0.635214 121.663 3.91511 126.569 6.21926C125.294 7.39485 124.077 8.62922 122.98 9.786M144.572 4.42767C141.24 6.4873 136.631 8.35414 132.203 7.95443C131.081 9.07125 129.881 10.3644 128.679 11.7751C136.358 13.2399 143.086 8.65273 146.664 4.74743C147.968 3.34332 149.089 1.79011 150 0.122657C148.371 1.75825 146.548 3.2032 144.569 4.42767M134.344 25.2873C134.402 25.1897 134.449 25.0865 134.485 24.9793C134.463 24.8098 134.38 24.6529 134.252 24.5348C134.124 24.4167 133.957 24.3446 133.781 24.3304C133.049 24.2975 132.052 24.4315 129.435 27.2247C127.264 29.5313 125.396 32.0867 123.872 34.8331C122.375 37.4711 121.768 39.4367 122.629 39.9446C122.908 40.0843 123.233 40.1162 123.536 40.0339C124.119 39.8999 124.78 39.3732 125.784 38.2517C126.255 37.7251 126.777 36.9797 127.401 36.1545C129.132 33.8832 133.483 26.7333 134.344 25.2873ZM107.163 28.325C107.599 27.2247 108.155 25.064 106.999 24.2152C105.758 23.3147 102.593 25.4284 102.576 27.5962C102.554 29.8157 104.805 30.8197 105.343 30.9607C105.651 31.0407 105.758 31.0289 105.907 30.7914C106.384 29.9984 106.804 29.1742 107.163 28.325ZM104.768 32.362C103.984 32.0128 103.252 31.5628 102.593 31.0242C101.932 30.4897 101.379 29.8415 100.964 29.1127C100.92 29.0422 100.876 29.0962 100.827 29.1597C100.778 29.2232 100.583 29.3948 98.8957 31.7789C97.2082 34.163 94.6159 39.1029 96.9619 39.9446C98.4641 40.483 100.964 37.9461 102.327 36.265C103.256 35.0916 104.097 33.8565 104.846 32.5689C104.917 32.4255 104.846 32.3926 104.77 32.362M131.381 38.0683C130.744 39.0511 130.018 40.9368 132.113 39.7635C134.676 38.3364 138.326 32.9968 138.326 32.9968H139.982C138.475 35.2304 136.798 37.3524 134.963 39.345C132.366 42.1194 129.198 44.6399 126.967 44.3907C124.36 44.0968 125.177 40.7981 125.177 40.7981C125.177 40.7981 121.448 44.6258 118.868 44.3507C115.383 43.9792 116.447 39.827 116.447 39.827C116.447 39.827 112.506 44.4894 109.821 44.346C105.612 44.1109 106.67 39.1734 107.841 35.696C108.467 33.8362 109.048 32.3761 109.048 32.3761C109.048 32.3761 108.631 32.4819 107.733 32.6112C107.265 32.6747 106.412 32.7218 106.412 32.7218C106.412 32.7218 104.658 35.703 103.256 37.4946C101.854 39.2862 95.8937 45.4628 92.387 44.2261C89.1436 43.0834 90.2166 38.2964 92.1041 34.4922C94.8598 28.9458 102.61 20.9776 107.08 22.0309C111.713 23.1148 107.185 31.2664 107.185 31.2664C107.185 31.2664 107.185 31.2969 107.233 31.3181C107.326 31.351 107.568 31.3769 108.126 31.2711C108.705 31.1573 109.272 30.9944 109.821 30.7844C109.821 30.7844 114.479 21.3797 119.624 15.2266C124.77 9.0736 135.034 -1.52317 139.063 1.03962C140.038 1.66973 139.599 3.83987 138.273 6.47319C137.675 6.66032 137.068 6.81728 136.453 6.94343C137.341 5.3893 137.929 4.07969 138.104 3.16508C138.712 -0.0137114 131.013 6.69185 125.511 13.8959C122.197 18.2389 119.253 22.8331 116.708 27.6338C117.701 27.0494 118.65 26.3964 119.546 25.68C122 23.7182 124.332 21.6189 126.53 19.3929C128.647 17.3036 130.633 15.0943 132.476 12.7767C133.062 12.7494 133.645 12.6913 134.224 12.6027C132.215 15.2328 130.023 17.7291 127.664 20.0748C125.47 22.2143 123.094 24.5161 121.031 26.1878C119.189 27.6987 117.245 29.0912 115.213 30.3565C115.213 30.3565 110.401 39.7118 113.018 40.3114C114.557 40.6687 117.595 36.1568 117.595 36.1568C117.595 36.1568 121.561 30.3235 123.95 27.6926C127.211 24.1188 130.018 22.0498 132.822 22.0121C134.456 21.9839 135.419 23.658 135.419 23.658L136.188 22.5106H140.918C140.918 22.5106 132.083 36.9656 131.376 38.0542M144.569 4.42767C141.238 6.4873 136.629 8.35414 132.2 7.95443C131.079 9.07125 129.879 10.3644 128.676 11.7751C136.356 13.2399 143.084 8.65273 146.661 4.74743C147.967 3.34346 149.088 1.79023 150 0.122657C148.371 1.75825 146.548 3.2032 144.569 4.42767ZM78.1282 11.5188H73.6289L71.0854 15.4806H75.5847L78.1282 11.5188ZM56.8242 25.238C58.7385 22.7081 64.0206 13.8418 64.0206 13.8418C63.9984 13.6724 63.9164 13.5156 63.7886 13.3975C63.6608 13.2793 63.4948 13.2071 63.3183 13.1929C62.5867 13.1599 61.3674 13.3974 58.9458 16.3199C56.5242 19.2424 54.644 21.5678 53.2735 23.9871C51.7713 26.6275 51.1153 28.4896 51.9786 28.9951C52.2587 29.1305 52.5806 29.1622 52.8833 29.0845C53.4442 28.9481 54.1783 28.405 55.1854 27.2882C55.6585 26.7662 56.195 26.0632 56.8242 25.238ZM32.6816 13.2469C31.4379 12.3417 28.275 14.4601 28.2579 16.6232C28.2384 18.8451 31.1038 19.5246 31.4745 19.541C31.5835 19.5498 31.6928 19.5277 31.789 19.4776C31.8552 19.4404 31.9079 19.3846 31.9402 19.3177C32.2771 18.6794 32.5799 18.0249 32.8474 17.3568C33.2839 16.2564 33.8375 14.0957 32.6816 13.2469ZM30.8063 20.8953C29.9487 20.637 29.1291 20.2735 28.3676 19.8138C27.6297 19.35 27.0297 18.7091 26.6264 17.954C26.5825 17.8835 26.5338 17.9375 26.4899 18.001C26.446 18.0645 26.1924 18.3702 24.4999 20.7637C22.8075 23.1572 20.3006 28.0523 22.649 28.894C24.1463 29.4419 26.6752 26.8838 28.0482 25.2097C29.0756 23.8942 30.0249 22.5236 30.8916 21.1046C30.9477 20.9612 30.8916 20.9282 30.8087 20.9024M67.5542 22.3695H69.2028C69.2028 22.3695 60.9431 33.8903 56.2779 33.3542C53.6735 33.0603 54.4465 29.9615 54.4465 29.9615C54.4465 29.9615 50.7885 34.0901 47.4281 33.2531C44.3798 32.4984 46.3478 27.6103 46.3478 27.6103C46.0015 27.7443 39.4049 34.9131 34.7691 33.1943C29.9186 31.3886 32.4377 25.3861 33.3595 23.5804C34.1423 22.0592 35.0081 20.5779 35.0081 20.5779C35.0081 20.5779 34.2643 20.7801 33.7887 20.8836C33.3132 20.987 32.6255 21.1187 32.6255 21.1187C32.6255 21.1187 30.3307 24.7136 28.9285 26.5076C27.5263 28.3015 21.5662 34.4663 18.0546 33.239C14.5429 32.0117 15.4135 27.2741 17.3864 23.5122C20.5859 17.4109 28.1774 9.91297 32.7499 11.0509C37.3687 12.1866 33.5449 19.4094 33.5449 19.4094C33.5449 19.4094 34.4642 19.5246 36.6663 18.0763C39.8366 15.9908 44.0213 10.3809 48.5523 11.0392C50.6886 11.3495 52.6785 13.4538 49.957 17.4508C49.0888 18.7346 47.6329 19.882 46.5185 18.7463C45.8235 18.041 46.4307 16.7549 47.1598 15.8756C47.4436 15.5171 47.8145 15.2314 48.2397 15.0436C48.665 14.8558 49.1316 14.7717 49.5985 14.7987C49.5985 14.7987 50.3471 13.1529 48.4426 13.1764C46.9013 13.2046 42.9995 16.6679 40.7974 20.1665C38.7782 23.3782 35.7177 28.8494 38.7904 30.0414C41.607 31.1371 46.9672 25.0028 49.4497 21.7888C51.9323 18.5747 57.5899 11.2908 62.3355 10.9992C63.9694 10.8958 64.9424 12.3323 64.9424 12.3323L65.4911 11.4953H70.2367C70.2367 11.4953 61.2991 25.8751 60.6017 26.9637C60.053 27.8148 59.3238 29.7287 61.3333 28.6566C63.3427 27.5844 67.5542 22.3695 67.5542 22.3695ZM64.9717 45.4111C61.4775 43.079 57.2934 41.9018 53.0467 42.0559C51.8973 42.0862 50.7715 42.3772 49.7605 42.9054C48.7495 43.4336 47.882 44.1841 47.2281 45.096C45.4186 42.0512 41.8412 40.182 36.3103 40.2244C27.3727 40.3231 18.5082 44.2966 11.4849 44.2919C4.75421 44.2919 -0.154781 40.2126 0.00373121 32.9686C0.298807 20.2558 11.441 8.80791 19.7568 3.65648C24.5511 0.696345 28.5603 -0.182996 31.1818 0.101497C33.0937 0.306049 35.3934 2.43622 33.9424 5.57504C31.811 10.1622 28.8675 9.786 28.9773 7.59235C29.0383 6.16519 30.0235 5.26704 30.7648 4.77094C31.2355 4.45823 32.0671 4.36889 32.5011 4.35948C32.923 4.01621 33.2327 1.50515 29.8186 2.33041C26.4045 3.15568 22.2588 6.40031 18.3228 10.5925C14.3869 14.7846 8.25855 22.7081 6.74415 31.0289C6.03694 34.8872 6.50029 41.9243 15.9891 41.8443C24.0366 41.7808 35.8982 36.6717 46.7989 36.7775C51.03 36.8175 54.7123 37.9179 57.5826 39.6248C60.4017 41.2989 63.7817 43.7441 64.9815 45.4134" fill="current"/>
+              </svg>
+            </a>
+          </h1>
+
+          <!-- gnb -->
+          <nav class="gnb">
+            <ul>
+              <li><a href="product.html" title="제품정보">제품정보</a>
+                <ul>
+                  <li><a href="sparkling.html" title="스파클링">스파클링</a></li>
+                  <li><a href="juice.html" title="주스">주스</a></li>
+                  <li><a href="coffee_tea.html" title="커피&#38;티">커피&#38;티</a></li>
+                  <li><a href="sport_ion.html" title="스포츠&#38;이온">스포츠&#38;이온</a></li>
+                  <li><a href="water.html" title="생수">생수</a></li>
+                  <li><a href="lifestyle.html" title="라이프스타일">라이프스타일</a></li>
+                </ul>
+              </li>
+              <li><a href="company.html" title="회사소개">회사소개</a>
+                <ul>
+                  <li><a href="company.html" title="회사소개">회사소개</a></li>
+                  <li><a href="cocacola.html" title="코카콜라소개">코카콜라소개</a></li>
+                  <li><a href="right.html" title="정도경영">정도경영</a></li>
+                  <li><a href="society.html" title="사회활동">사회활동</a></li>
+                </ul>
+              </li>
+              <li><a href="notice.html" title="뉴스/정보">뉴스/정보</a>
+                <ul>
+                  <li><a href="notice.html" title="공지사항">공지사항</a></li>
+                  <li><a href="business.html" title="사업안내">사업안내</a></li>
+                  <li><a href="recruit.html" title="인재채용">인재채용</a></li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" title="갤러리">갤러리</a>
+                <ul>
+                  <li><a href="cf.html" title="CF광고">CF광고</a></li>
+                  <li><a href="print.html" title="인쇄광고">인쇄광고</a></li>
+                </ul>
+              </li>
+              <li><a href="#" title="고객센터">고객센터</a>
+                <ul>
+                  <li><a href="#" title="FAQ">FAQ</a></li>
+                  <li><a href="#" title="고객의소리">고객의소리</a></li>
+                  <li><a href="#" title="신규거래신청">신규거래신청</a></li>
+                  <li><a href="#" title="사이버신문고">사이버신문고</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- 온라인몰 -->
+          <a href="https://brand.naver.com/cocacola?NaPm=ct%3Dluqcte32%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3Db29f9f681c89cb8608d87b00041de8e7f3cf61bb" title="온라인몰" class="button">온라인몰 <i class="fa-solid fa-cart-shopping"></i></a>
+
+          <!-- 사이트맵 버튼 -->
+          <label for="toggle" class="toggle_btn"><i class="fa-solid fa-bars"></i></label>
+        </div>
+      </div>
+    </header>
+
+    <!-- 사이트맵 -->
+    <div class="site_map">
+      <div class="sm_wrap">
+        <h2>사이트맵</h2>
+        <label for="toggle"><i class="fa-solid fa-xmark"></i></label>
+        <div class="sm_grid">
+          <div>
+            <h3>제품정보</h3>
+            <h4><a href="#" title="스파클링">스파클링</a></h4>
+            <ul>
+              <li><a href="#" title="코카콜라">코카콜라</a></li>
+              <li><a href="#" title="코카콜라 제로">코카콜라 제로</a></li>
+              <li><a href="#" title="코카콜라 제로제로">코카콜라 제로제로</a></li>
+              <li><a href="#" title="코카콜라 라이트">코라콜라 라이트</a></li>
+              <li><a href="#" title="환타">환타</a></li>
+              <li><a href="#" title="환타 제로">환타 제로</a></li>
+              <li><a href="#" title="환타 밀크소다">환타 밀크소다</a></li>
+              <li><a href="#" title="스프라이트">스프라이트</a></li>
+              <li><a href="#" title="스프라이트 제로">스프라이트 제로</a></li>
+              <li><a href="#" title="스프라이트 킨사이다">스프라이트 킨사이다</a></li>
+              <li><a href="#" title="슈웹스">슈웹스</a></li>
+              <li><a href="#" title="씨그램">씨그램</a></li>
+              <li><a href="#" title="닥터페퍼">닥터페퍼</a></li>
+              <li><a href="#" title="닥터페퍼 제로">닥터페퍼 제로</a></li>
+              <li><a href="#" title="캐나다 드라이">캐나다 드라이</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4><a href="#" title="주스">주스</a></h4>
+            <ul>
+              <li><a href="#" title="미닛메이드">미닛메이드</a></li>
+              <li><a href="#" title="미닛메이드 조이">미닛메이드 조이</a></li>
+              <li><a href="#" title="미닛메이드 쿠우">미닛메이드 쿠우</a></li>
+              <li><a href="#" title="미닛메이드 쿠우 젤리">미닛메이드 쿠우 젤리</a></li>
+            </ul>
+            <h4><a href="#" title="커피&티">커피&티</a></h4>
+            <ul>
+              <li><a href="#" title="조지아">조지아</a></li>
+              <li><a href="#" title="조지아">태양의 마테차</a></li>
+              <li><a href="#" title="조지아">식후비법W</a></li>
+            </ul>
+            <h4><a href="#" title="스포츠">스포츠&이온</a></h4>
+            <ul>
+              <li><a href="#" title="파워에이드">파워에이드</a></li>
+              <li><a href="#" title="파워에이드 제로">파워에이드 제로</a></li>
+              <li><a href="#" title="몬스터 에너지">몬스터 에너지</a></li>
+              <li><a href="#" title="토레타">토레타</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4><a href="#" title="생수">생수</a></h4>
+            <ul>
+              <li><a href="#" title="휘오 순수">휘오 순수</a></li>
+              <li><a href="#" title="휘오 다이아몬드">휘오 다이아몬드</a></li>
+              <li><a href="#" title="휘오 다이아몬드 EC">휘오 다이아몬드 EC</a></li>
+            </ul>
+            <h4><a href="#" title="라이프스타일">라이프스타일</a></h4>
+            <ul>
+              <li><a href="#" title="글라소 비타민 워터">글라소 비타민 워터</a></li>
+            </ul>
+            <h3 class="m_top">회사소개</h3>
+            <h4><a href="#" title="회사소개">회사소개</a></h4>
+            <h4><a href="#" title="코카콜라소개">코카콜라소개</a></h4>
+            <h4><a href="#" title="정도경영">정도경영</a></h4>
+            <h4><a href="#" title="사회활동">사회활동</a></h4>
+            <h3 class="m_top">뉴스/소식</h3>
+            <h4><a href="#" title="공지사항">공지사항</a></h4>
+            <h4><a href="#" title="사업안내">사업안내</a></h4>
+            <h4><a href="#" title="인재채용">인재채용</a></h4>
+          </div>
+          <div>
+            <h3>갤러리</h3>
+            <h4><a href="#" title="CF광고">CF광고</a></h4>
+            <h4><a href="#" title="인쇄광고">인쇄광고</a></h4>
+            <h3 class="m_top">고객센터</h3>
+            <h4><a href="#" title="FAQ">FAQ</a></h4>
+            <h4><a href="#" title="고객의소리">고객의소리</a></h4>
+            <h4><a href="#" title="신규거래신청">신규거래신청</a></h4>
+            <h4><a href="#" title="사이버신문고">사이버신문고</a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인영역 시작 -->
+    <main>
+      <!-- 1. 메인 슬라이드 -->
+      <article class="slide" id="slide">
+        <h2>슬라이드</h2>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <video src="./video/visual01.mp4" autoplay playsinline muted loop></video>
+              <div class="visual_txt">
+                <p>일상 속 마법 같은 짜릿한 순간! Real Magic</p>
+                <h3>코카콜라 제로</h3>
+                <a href="#">바로가기</a>
+              </div>
+            </div>
+            <div class="swiper-slide" data-swiper-autoplay="11700">
+              <video src="./video/visual02.mp4" autoplay playsinline muted loop></video>
+              <div class="visual_txt">
+                <p>일상 속 마법 같은 짜릿한 순간! Real Magic</p>
+                <h3>코카콜라 제로 K-Wave</h3>
+                <a href="#">바로가기</a>
+              </div>
+            </div>
+            <div class="swiper-slide" data-swiper-autoplay="15000">
+              <video src="./video/visual03.mp4" autoplay playsinline muted loop></video>
+              <div class="visual_txt">
+                <p>깨우다, 오늘을 새롭게</p>
+                <h3>조지아</h3>
+                <a href="#">바로가기</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </article>
+      
+      <!-- 2. 회사소개 -->
+      <section id="company">
+        <h2>Company</h2>
+        <p class="section_txt">'코카-콜라'는 120년 역사와 함께 전세계 200여 나라의 <br>
+          고객이 하루 평균 13억잔 이상을 마시는 세계 최고의 음료브랜드입니다.
+        </p>
+        <div class="c_tab">
+          <input type="radio" name="c_tab" id="c_tab01" checked>
+          <label for="c_tab01">회사소개</label>
+          <input type="radio" name="c_tab" id="c_tab02">
+          <label for="c_tab02">코카콜라소개</label>
+          <input type="radio" name="c_tab" id="c_tab03">
+          <label for="c_tab03">정도경영</label>
+          <div class="c_cont01">
+            <div>
+              <h3>회사소개</h3>
+              <p class="c_title">아시아 최고, 세계최고를 향해<br>
+                끊임없이 도전하겠습니다
+              </p>
+              <p class="c_txt">코카-콜라 음료는 코카-콜라사 (The Coca-Cola Company)의 다양한 음료제품들을 국내에서 독립적으로 생산, 판매하는 회사입니다.
+                코카-콜라 음료는 코카-콜라' 뿐만 아니라 청량음료 '킨사이다', '스프라이트', '환타' 스포츠음료 '파워에이드' 프리미엄 주스 '미닛메이드’를 비롯 '쿠우', '네스티', '순수 100', '암바사' 등 다양한 맛과 감각의 음료들을 통해 소비자들의 생활에 즐거움을 드려 왔습니다.
+              </p>
+              <a href="#none" title="바로가기 버튼" class="button w_btn">바로가기 <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <img src="./images/company01.jpg" alt="회사소개 이미지">
+          </div>
+          <div class="c_cont02">
+            <div>
+              <h3>코카콜라소개</h3>
+              <p class="c_title">세계 1위 브랜드가치를 지닌<br>
+                코카-콜라 이야기를 들어보세요
+              </p>
+              <p class="c_txt">코카-콜라가 이렇게 소비자들의 큰 사랑을 받으며 세계 1위 브랜드로서 성공할 수 있었던 이유는 코카-콜라 특유의 톡 쏘는 상쾌한 맛 뿐 아니라 코카-콜라의 병 모양, 로고, 광고 등에 의해 다른 제품과 구별되어지는 독특한 브랜드로서 소비자에게 기억되고 오랜 시간을 거치며 친숙함을 더했기 때문입니다.
+                세계 1위 브랜드로 인정받고 있는 코카-콜라는 125년 이상의 오랜 시간 동안 전세계 200개국 이상의 소비자들에게 변함없는 사랑을 받으며 '해가 지지 않는 브랜드'로서 굳건히 자리를 잡고 있습니다.
+              </p>
+              <a href="#none" title="바로가기 버튼" class="button w_btn">바로가기 <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <img src="./images/company02.jpg" alt="코카콜라소개 이미지">
+          </div>
+          <div class="c_cont03">
+            <div>
+              <h3>정도경영</h3>
+              <p class="c_title">'고객을 위한 가치창조'와<br>
+                '인간존중의 경영', '일등 LG'
+              </p>
+              <p class="c_txt">LG의 '정도경영'이란 윤리경영을 기반으로 꾸준하게 실력을 길러 정정당당하게 승부하자는 LG만의 행동방식을 의미합니다.
+                LG가 추구하는 근본적인 가치 즉, 경영이념을 실 천하는 LG 고유의 행동방식이 바로 정도경영 입니다. 정도경영이란 단순히 윤리경영만을 의미 하는 것이 아니며, 진정한 의미의 정도경영은 윤리경영에서 나아가 경쟁에서 이길 수 있는 실력을 바탕으로 실질적인 성과를 창출하는 것을 의미합니다.
+              </p>
+              <a href="#none" title="바로가기 버튼" class="button w_btn">바로가기 <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <img src="./images/company03.jpg" alt="정도경영 이미지">
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 제품소개 -->
+      <section id="product">
+        <h2>Product</h2>
+        <p class="section_txt">세계 1위 브랜드 가치를 가진 코카콜라 외<br>
+          코카콜라음료만의 다양한 음료 브랜드를 알아보세요.
+        </p>
+        <div class="p_wrap">
+          <!-- p_card radio버튼 -->
+          <input type="radio" name="product" id="product01" checked>
+          <input type="radio" name="product" id="product02">
+          <input type="radio" name="product" id="product03">
+          <input type="radio" name="product" id="product04">
+          <input type="radio" name="product" id="product05">
+          <input type="radio" name="product" id="product06">
+          <input type="radio" name="product" id="product07">
+          <input type="radio" name="product" id="product08">
+          
+          <!-- 코카콜라 -->
+          <div class="p_card01">
+            <!-- p_cont radio버튼 -->
+            <input type="radio" name="prod01" id="coke01" checked>
+            <input type="radio" name="prod01" id="coke02">
+            <input type="radio" name="prod01" id="coke03">
+            <input type="radio" name="prod01" id="coke04">
+            <div class="p_cont01">
+              <img src="./images/product101.jpg" alt="코카콜라 오리지널">
+              <div class="cont_box">
+                <p class="p_p01">일상 속 마법 같은 짜릿한 순간! Real Magic</p>
+                <h3>코카콜라</h3>
+                <p class="p_p02">언제 어디서나 통하는 세계 공통어, 코카-콜라!<br>
+                  상쾌한 맛으로 일상의 짜릿한 순간을 함께 해온 세계적인 청량음료 코카-콜라만의 독특한 맛과 상쾌함으로 갈증해소 뿐만 아니라 기분까지도 상쾌하게 해주는 전세계 대표 음료 브랜드</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont02">
+              <img src="./images/product102.jpg" alt="코카콜라 제로">
+              <div class="cont_box">
+                <p class="p_p01">일상 속 마법 같은 짜릿한 순간! Real Magic</p>
+                <h3>코카콜라 제로</h3>
+                <p class="p_p02">Best Coke Ever!<br>
+                  설탕도 ZERO, 칼로리도 ZERO<br>
+                  코카-콜라만의 특별한 맛은 그대로,<br>
+                  코카-콜라 제로!<br>
+                  *상큼한 레몬맛도 즐겨봐!</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont03">
+              <img src="./images/product103.jpg" alt="코카콜라 제로제로">
+              <div class="cont_box">
+                <p class="p_p01">늦어도 즐거워요 언제나 짜릿하게!</p>
+                <h3>코카콜라 제로제로</h3>
+                <p class="p_p02">칼로리와 카페인 부담없이,<br>
+                  부드러운 짜릿함을 구현한 코-크 제로제로!</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont04">
+              <img src="./images/product104.jpg" alt="코카콜라 라이트">
+              <div class="cont_box">
+                <p class="p_p01">일상 속 마법 같은 짜릿한 순간! Real Magic</p>
+                <h3>코카콜라 라이트</h3>
+                <p class="p_p02">세련되고 날씬한 몸매를 원하는, 칼로리를걱정하는 소비자들을 위한<br>
+                  가볍고 상쾌한 맛의 0kcal 코카-콜라</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <!-- p_cont radio버튼 -->
+            <div class="p_label01">
+              <label for="coke01" title="코카콜라 오리지널">오리지널</label>
+              <label for="coke02" title="코카콜라 제로">제로</label>
+              <label for="coke03" title="코카콜라 제로제로">제로제로</label>
+              <label for="coke04" title="코카콜라 라이트">라이트</label>
+            </div>
+          </div>
+
+          <!-- 스프라이트 -->
+          <div class="p_card02">
+            <!-- p_cont radio버튼 -->
+            <input type="radio" name="prod02" id="sprite01" checked>
+            <input type="radio" name="prod02" id="sprite02">
+            <input type="radio" name="prod02" id="sprite03">
+            <div class="p_cont01">
+              <img src="./images/product201.jpg" alt="스프라이트 오리지널">
+              <div class="cont_box">
+                <p class="p_p01">세계 NO.1 사이다 브랜드 스프라이트</p>
+                <h3>스프라이트</h3>
+                <p class="p_p02">세계 NO.1 사이다 브랜드!<br>
+                  감각적인 젊은이들을 위한 상쾌하고 깔끔한 맛의<br>
+                  글로벌 클리어 스파클링 제품</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont02">
+              <img src="./images/product202.jpg" alt="스프라이트 제로">
+              <div class="cont_box">
+                <p class="p_p01">세계 NO.1 사이다 브랜드 스프라이트</p>
+                <h3>스프라이트 제로</h3>
+                <p class="p_p02">세계 NO.1 사이다 브랜드!<br>
+                  스프라이트 만의 상쾌하고 깔끔한 맛은 그대로이고,<br>
+                  칼로리는 없는 또 하나의 스프라이트 !</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont03">
+              <img src="./images/product203.jpg" alt="스프라이트 킨사이다">
+              <div class="cont_box">
+                <p class="p_p01">현명한 선택 스프라이트 킨사이다</p>
+                <h3>스프라이트 킨사이다</h3>
+                <p class="p_p02">한국인의 입맛에 잘 맞게 개발된 짜릿한 맛의<br>
+                  스프라이트 킨사이다는 장수 브랜드 중 하나!</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <!-- p_cont radio버튼 -->
+            <div class="p_label01">
+              <label for="sprite01" title="스프라이트 오리지널">오리지널</label>
+              <label for="sprite02" title="스프라이트 제로">제로</label>
+              <label for="sprite03" title="스프라이트 킨사이다">킨사이다</label>
+            </div>
+          </div>
+
+          <!-- 환타 -->
+          <div class="p_card03">
+            <!-- p_cont radio버튼 -->
+            <input type="radio" name="prod03" id="fanta01" checked>
+            <input type="radio" name="prod03" id="fanta02">
+            <input type="radio" name="prod03" id="fanta03">
+            <div class="p_cont01">
+              <img src="./images/product301.jpg" alt="환타 오리지널">
+              <div class="cont_box">
+                <p class="p_p01">함께 나누는 즐거움</p>
+                <h3>환타</h3>
+                <p class="p_p02">톡쏘는 탄산의 상쾌함에 상큼한 과일향과<br>
+                  컬러풀한 과일의 색상이 더해져 기분까지 유쾌하게 해주는<br>
+                  세계 1위이자 국내에서 부동의 1위인 과일향 탄산음료</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont02">
+              <img src="./images/product302.jpg" alt="환타 제로">
+              <div class="cont_box">
+                <p class="p_p01">기다렸던 바로 그 제로!</p>
+                <h3>환타 제로</h3>
+                <p class="p_p02">톡쏘는 탄산의 상쾌함에 상큼달콤한 과일향이 더해져<br>
+                  기분까지 유쾌하게 해주는 환타를<br>
+                  이제는 제로 슈거, 제로 칼로리로 가볍게 즐겨보세요!</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont03">
+              <img src="./images/product303.jpg" alt="환타 밀크소다">
+              <div class="cont_box">
+                <p class="p_p01">우유와 탄산의 부드러운 만남</p>
+                <h3>환타 밀크소다</h3>
+                <p class="p_p02">톡 쏘는 맛에 우유가 첨가된 담백하고 부드러운 맛의 탄산음료</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <!-- p_cont radio버튼 -->
+            <div class="p_label01">
+              <label for="fanta01" title="환타 오리지널">오리지널</label>
+              <label for="fanta02" title="환타 제로">제로</label>
+              <label for="fanta03" title="환타 밀크소다">밀크소다</label>
+            </div>
+          </div>
+
+          <!-- 닥터페퍼 -->
+          <div class="p_card04">
+            <!-- p_cont radio버튼 -->
+            <input type="radio" name="prod04" id="drpepper01" checked>
+            <input type="radio" name="prod04" id="drpepper02">
+            <div class="p_cont01">
+              <img src="./images/product401.jpg" alt="닥터페퍼 오리지널">
+              <div class="cont_box">
+                <p class="p_p01">누구도 흉내낼 수 없는 유니크함</p>
+                <h3>닥터페퍼</h3>
+                <p class="p_p02">국내 브랜드에서는 흉내낼 수 없는 체리향과 더불어 느낄 수 있는 독특한 맛!<br>
+                  가장 독특한 맛을 찾는다면 닥터페퍼입니다!</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont02">
+              <img src="./images/product402.jpg" alt="닥터페퍼 제로">
+              <div class="cont_box">
+                <p class="p_p01">독보적인 맛은 그대로 칼로리는 제로</p>
+                <h3>닥터페퍼 제로</h3>
+                <p class="p_p02">닥터페퍼만의 독특한 풍미와 시원한 탄산을<br>
+                  제로 칼로리로 부담 없이 즐겨보세요</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <!-- p_cont radio버튼 -->
+            <div class="p_label01">
+              <label for="drpepper01" title="닥터페퍼 오리지널">오리지널</label>
+              <label for="drpepper02" title="닥터페퍼 제로">제로</label>
+            </div>
+          </div>
+
+          <!-- 미닛메이트 -->
+          <div class="p_card05">
+            <!-- p_cont radio버튼 -->
+            <input type="radio" name="prod05" id="m_made01" checked>
+            <input type="radio" name="prod05" id="m_made02">
+            <input type="radio" name="prod05" id="m_made03">
+            <input type="radio" name="prod05" id="m_made04">
+            <div class="p_cont01">
+              <img src="./images/product501.jpg" alt="미닛메이드 오리지널">
+              <div class="cont_box">
+                <p class="p_p01">세계 1위 주스음료 브랜드</p>
+                <h3>미닛메이드</h3>
+                <p class="p_p02">자연의 풍부한 영양과 맛을 담은 세계 1위 주스음료 브랜드<br>
+                  1-100% 과채즙 함유 juice/nectars/still drinks,<br>
+                  2020년 판매량 기준, 출처: Global Data</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont02">
+              <img src="./images/product502.jpg" alt="미닛메이드 조이">
+              <div class="cont_box">
+                <p class="p_p01">언제 어디서나 미닛메이드 조이</p>
+                <h3>미닛메이드 조이</h3>
+                <p class="p_p02">작고 가벼운 콤비블럭에 담아, 보관&휴대가 간편해진 미닛메이드 조이<br>
+                  통학, 나들이 시에 가방에 하나씩 쏙쏙 챙겨 넣어 가기에 안성맞춤!<br>
+                  상큼한 오렌지, 애플, 망고 3가지 맛으로 구성</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont03">
+              <img src="./images/product503.jpg" alt="미닛메이드 쿠우">
+              <div class="cont_box">
+                <p class="p_p01">합성착색료 없이 건강한 어린이 과일주스</p>
+                <h3>미닛메이드 쿠우</h3>
+                <p class="p_p02">새콤달콤한 과즙과 비타민 C, 칼슘까지 들어있어<br>
+                  어린이들이 좋아하는 맛있는 과실음료로<br>
+                  세계 1위 주스음료 브랜드 미닛메이드의 노하우와<br>
+                  철학을 쿠우에 담아 더욱 건강한 어린이 음료</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="p_cont04">
+              <img src="./images/product504.jpg" alt="미닛메이드 쿠우 젤리">
+              <div class="cont_box">
+                <p class="p_p01">영양가득 짜먹는 젤리음료 쿠우 젤리</p>
+                <h3>미닛메이드 쿠우 젤리</h3>
+                <p class="p_p02">우리 아이 간식, 맛있고 재미도 있는게 없을까?<br>
+                  말랑말랑 젤리가 입 속으로 쏘~옥<br>
+                  맛있는 복숭아/포도 주스에 아이들 성장에 좋은 칼슘까지.<br>
+                  맛있는 쿠우를 더 재미있게 즐길 수 있는 미닛메이드 쿠우 젤리</p>
+                <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <!-- p_cont radio버튼 -->
+            <div class="p_label01">
+              <label for="m_made01" title="미닛메이드 오리지널">오리지널</label>
+              <label for="m_made02" title="미닛메이트 조이">조이</label>
+              <label for="m_made03" title="미닛메이드 쿠우">쿠우</label>
+              <label for="m_made04" title="미닛메이드 쿠우 젤리">쿠우젤리</label>
+            </div>
+          </div>
+          
+            <!-- 조지아 -->
+            <div class="p_card06">
+              <!-- p_cont radio버튼 -->
+              <input type="radio" name="prod06" id="georgia01" checked>
+              <div class="p_cont01">
+                <img src="./images/product601.jpg" alt="조지아">
+                <div class="cont_box">
+                  <p class="p_p01">깨우다, 오늘을 새롭게</p>
+                  <h3>조지아</h3>
+                  <p class="p_p02">풍부한 맛과 향이 어우러진 조지아 커피는<br>
+                    간편하게 즐길 수 있는 일상의 여유를 선사합니다.</p>
+                  <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+              </div>
+              <!-- p_cont radio버튼 -->
+              <div class="p_label01">
+                <label for="georgia01" title="조지아">조지아</label>
+              </div>
+            </div>
+
+            <!-- 파워에이드 -->
+            <div class="p_card07">
+              <!-- p_cont radio버튼 -->
+              <input type="radio" name="prod07" id="p_aid01" checked>
+              <input type="radio" name="prod07" id="p_aid02">
+              <div class="p_cont01">
+                <img src="./images/product701.jpg" alt="파워에이드 오리지널">
+                <div class="cont_box">
+                  <p class="p_p01">저칼로리 스포츠음료</p>
+                  <h3>파워에이드</h3>
+                  <p class="p_p02">ION4와 비타민 B가 함유되어 땀으로 손실되는<br>
+                    4가지 필수 전해질을 보충하고, 효과적으로 에너지를 공급해<br>
+                    운동 능력 유지에 도움을 주는 저칼로리 스포츠 음료.</p>
+                  <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+              </div>
+              <div class="p_cont02">
+                <img src="./images/product702.jpg" alt="파워에이드 제로">
+                <div class="cont_box">
+                  <p class="p_p01">스포츠가 있는 곳에, 파워에이드!</p>
+                  <h3>파워에이드 제로</h3>
+                  <p class="p_p02">땀으로 배출되는 전해질을 보충하는 ION4 시스템으로<br>
+                    강력한 수분 충전과 맛은 그대로, 칼로리는 ZERO인 제로칼로리 스포츠음료</p>
+                  <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+              </div>
+              <!-- p_cont radio버튼 -->
+              <div class="p_label01">
+                <label for="p_aid01" title="파워에이드 오리지널">오리지널</label>
+                <label for="p_aid02" title="파워에이드 제로">제로</label>
+              </div>
+            </div>
+
+            <!-- 토레타 -->
+            <div class="p_card08">
+              <!-- p_cont radio버튼 -->
+              <input type="radio" name="prod08" id="toreta01" checked>
+              <div class="p_cont01">
+                <img src="./images/product801.jpg" alt="토레타 오리지널">
+                <div class="cont_box">
+                  <p class="p_p01">저칼로리 수분보충</p>
+                  <h3>토레타</h3>
+                  <p class="p_p02">10가지 과채의 착한 수분, 토레타!<br>
+                    토레타가 좋다. 싱그러워 좋다<br>
+                    저칼로리로 부담없이 가볍게,<br>
+                    산뜻하고 깔끔한 맛으로 온 가족이 즐길 수 있는 이온보충, 토레타!<br>
+                    10가지 과채 수분을 담은 저칼로리 이온 보충 토레타!</p>
+                  <a href="#none" title="바로가기" class="button w_btn">바로가기<i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+              </div>
+              <!-- p_cont radio버튼 -->
+              <div class="p_label01">
+                <label for="toreta01" title="토레타 오리지널">오리지널</label>
+              </div>
+            </div>
+
+          <!-- p_card radio버튼 -->
+          <div class="p_label02">
+            <label for="product01" title="코카콜라">
+              <svg width="90" height="29" viewBox="0 0 90 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M39.0005 28.2364C36.8439 26.7254 34.2289 26.0518 31.8385 26.1454C29.4293 26.2483 28.3487 28.0446 28.3487 28.0446C27.2587 26.1454 25.1162 24.9852 21.7995 25.0226C16.4338 25.0741 11.115 27.5581 6.8954 27.5581C2.85361 27.5581 -0.09353 25.0226 2.99846e-05 20.499C0.173116 12.5885 6.8533 5.46861 11.8447 2.24547C14.717 0.411697 17.1262 -0.144984 18.7027 0.0281014C19.8488 0.159085 21.2288 1.49699 20.3587 3.43836C19.0863 6.3013 17.318 6.07207 17.3741 4.70142C17.4115 3.80792 18.001 3.24189 18.4407 2.93314C18.7307 2.74134 19.2313 2.69456 19.4839 2.6852C19.7318 2.47469 19.9283 0.898209 17.8747 1.42214C15.8163 1.9414 13.3417 3.95762 10.984 6.55859C8.62158 9.16891 4.94467 14.1089 4.04182 19.2874C3.61612 21.6872 3.8968 26.0658 9.5946 26.0144C14.4223 25.977 21.5375 22.8006 28.0774 22.8614C30.6175 22.8754 32.8302 23.5584 34.5517 24.625C36.2498 25.6776 38.2801 27.1932 39.0005 28.2364ZM40.5489 13.889H41.5406C41.5406 13.889 36.582 21.0557 33.7799 20.7329C32.2174 20.5598 32.6805 18.6185 32.6805 18.6185C32.6805 18.6185 30.4772 21.1867 28.4703 20.6674C26.6412 20.2183 27.8201 17.173 27.8201 17.173C27.6143 17.2525 23.652 21.7106 20.8733 20.6487C17.9635 19.5354 19.4699 15.7883 20.0265 14.6702C20.4943 13.7206 21.0136 12.799 21.0136 12.799C21.0136 12.799 20.5645 12.9253 20.2932 12.9908C20.0172 13.0516 19.5915 13.1359 19.5915 13.1359C19.5915 13.1359 18.2162 15.3719 17.3648 16.49C16.5274 17.608 12.9487 21.4487 10.8483 20.6674C8.74321 19.9236 9.25779 16.9718 10.4413 14.6235C12.364 10.8296 16.9157 6.16096 19.6523 6.85798C22.431 7.555 20.1435 12.0646 20.1435 12.0646C20.1435 12.0646 20.6861 12.1394 22.0053 11.2366C23.914 9.94078 26.4214 6.44164 29.144 6.8533C30.4117 7.04042 31.6093 8.34558 29.9813 10.8343C29.4574 11.6389 28.592 12.3499 27.9183 11.6436C27.502 11.2085 27.8622 10.4086 28.2972 9.86593C28.9101 9.08938 29.7661 9.1923 29.7661 9.1923C29.7661 9.1923 30.2152 8.15378 29.0785 8.1725C28.1475 8.19121 25.8132 10.3384 24.494 12.5277C23.2731 14.5346 21.4393 17.9355 23.2871 18.684C24.9805 19.3669 28.1896 15.5403 29.6819 13.5335C31.1742 11.5407 34.5658 7.003 37.41 6.81588C38.383 6.75038 38.9678 7.6392 38.9678 7.6392L39.3046 7.12462H42.1441C42.1441 7.12462 36.7878 16.0783 36.3668 16.766C36.0393 17.2899 35.6043 18.4828 36.8159 17.8092C38.0181 17.1355 40.5489 13.889 40.5489 13.889ZM18.4828 12.9862C18.4313 12.9628 17.7109 12.7523 17.0139 12.3172C16.3216 11.8588 15.9941 11.1992 15.966 11.1571C15.9473 11.1103 15.9146 11.1477 15.8865 11.1804C15.8584 11.2179 15.7041 11.419 14.6889 12.902C13.6738 14.3989 12.1722 17.4536 13.5803 17.9682C14.4784 18.3004 15.9941 16.7145 16.8221 15.6713C17.5799 14.7077 18.4828 13.2013 18.5249 13.1078C18.5623 13.0236 18.5296 13.0002 18.4828 12.9862ZM19.6055 8.22863C18.8524 7.65792 16.9578 8.97711 16.9531 10.3197C16.9391 11.7091 18.6606 12.1067 18.8851 12.116C18.8851 12.116 19.0816 12.1722 19.1564 12.0085C19.2032 11.8962 19.4418 11.4752 19.7038 10.7875C19.9657 10.0952 20.3072 8.75725 19.6055 8.22863ZM34.098 15.676C35.2534 14.0995 38.4111 8.58884 38.4111 8.58884C38.4111 8.58884 38.3549 8.20056 37.99 8.18185C37.555 8.15378 36.8205 8.30348 35.375 10.1279C33.9155 11.943 32.7881 13.3885 31.9648 14.8948C31.0666 16.5461 30.669 17.6969 31.1882 18.0197C31.3333 18.1086 31.5484 18.1132 31.7356 18.0665C32.0677 17.9823 32.5121 17.6501 33.1062 16.9484C33.3963 16.6303 33.7237 16.1953 34.098 15.676ZM46.8829 7.13866H44.1837L42.6493 9.61332H45.3532L46.8829 7.13866ZM82.3047 25.5372C82.0334 25.5372 81.8042 25.6261 81.6124 25.8179C81.4206 26.005 81.3223 26.2436 81.3223 26.5102C81.3223 26.7816 81.4206 27.0155 81.6124 27.2213C81.7995 27.4084 82.0287 27.4973 82.3047 27.4973C82.576 27.4973 82.8146 27.4084 82.9924 27.2213C83.1842 27.0201 83.2824 26.7862 83.2824 26.5102C83.2824 26.2483 83.1842 26.0097 82.9924 25.8179C82.8053 25.6261 82.576 25.5372 82.3047 25.5372ZM83.4368 26.5056C83.4368 26.8237 83.3339 27.095 83.1093 27.3102C82.8848 27.5301 82.6228 27.6517 82.3047 27.6517C81.9866 27.6517 81.7246 27.5347 81.4954 27.3102C81.2756 27.095 81.168 26.819 81.168 26.5056C81.168 26.2015 81.2756 25.9255 81.5048 25.7103C81.7246 25.4858 81.9866 25.3782 82.3047 25.3782C82.6181 25.3782 82.8848 25.4858 83.1093 25.7103C83.3386 25.9255 83.4368 26.2015 83.4368 26.5056ZM82.5994 26.2576C82.5994 26.1781 82.576 26.1079 82.5152 26.0799C82.4684 26.0471 82.3702 26.0331 82.2486 26.0331H82.0615V26.4822H82.2579C82.3562 26.4822 82.4217 26.4728 82.4731 26.4541C82.5573 26.4214 82.5994 26.3652 82.5994 26.2576ZM81.8463 25.8928H82.2813C82.4357 25.8928 82.5573 25.9021 82.6228 25.9255C82.7491 25.9816 82.8146 26.0939 82.8146 26.2436C82.8146 26.3559 82.7772 26.4448 82.6977 26.4869C82.6509 26.5196 82.5901 26.543 82.5106 26.5523C82.6088 26.5711 82.6836 26.6038 82.7257 26.6693C82.7632 26.7395 82.7959 26.805 82.7959 26.8658V26.964V27.0482C82.8053 27.0903 82.8053 27.1044 82.8099 27.1137V27.1277H82.6041V27.1184C82.5947 27.1137 82.5947 27.1137 82.5947 27.1044V27.0669V26.964C82.5947 26.8143 82.562 26.7254 82.4825 26.6787C82.431 26.6459 82.3562 26.6319 82.2345 26.6319H82.0615V27.1231H81.8416V25.8928H81.8463ZM86.7395 2.69924C84.756 3.98569 81.9773 5.14583 79.3248 4.89322C78.6512 5.58556 77.9308 6.39018 77.215 7.26964C81.8229 8.18185 85.86 5.3236 88.0025 2.88636C89.3404 1.37069 90 0.00938943 90 0.00938943C90 0.00938943 88.7229 1.41747 86.7395 2.69924ZM78.8477 23.6473C78.4594 24.2461 78.0243 25.4296 79.2921 24.6952C80.8311 23.8064 83.0158 20.4897 83.0158 20.4897H84.0075C84.0075 20.4897 82.707 22.5527 80.9995 24.4332C79.4418 26.1547 77.5425 27.7312 76.2093 27.5815C74.6422 27.4037 75.124 25.3361 75.124 25.3361C75.124 25.3361 72.8832 27.7265 71.3395 27.5581C69.2484 27.3289 69.88 24.742 69.88 24.742C69.88 24.742 67.5176 27.647 65.913 27.5581C63.3822 27.4225 64.0137 24.3303 64.7201 22.1737C65.0944 21.0042 65.4452 20.1154 65.4452 20.1154C65.4452 20.1154 65.1926 20.1716 64.6546 20.2558C64.3693 20.2979 63.8594 20.3259 63.8594 20.3259C63.8594 20.3259 62.8068 22.1784 61.9648 23.3058C61.1274 24.4098 57.5628 28.2551 55.4577 27.4879C53.507 26.7769 54.1432 23.7877 55.2846 21.4299C56.9313 17.9823 61.5718 13.0142 64.2664 13.6645C67.0357 14.3428 64.3272 19.4044 64.3272 19.4044C64.3272 19.4044 64.3272 19.4231 64.3599 19.4465C64.4207 19.4652 64.5517 19.4699 64.8932 19.4137C65.4312 19.3108 65.9177 19.1097 65.9177 19.1097C65.9177 19.1097 68.7058 13.2575 71.7933 9.43088C74.8714 5.59492 81.037 -1.00574 83.4555 0.603495C84.0449 0.987091 83.7736 2.33903 82.9783 3.98101C82.6322 4.08393 82.2626 4.19152 81.8931 4.25701C82.4263 3.29334 82.7772 2.48873 82.8801 1.91801C83.2403 -0.0607805 78.6278 4.10264 75.3251 8.59352C72.0225 13.0797 70.0484 17.1449 70.0484 17.1449C70.0484 17.1449 70.7173 16.766 71.7512 15.9333C72.8364 15.0632 74.3241 13.6972 75.952 12.0225C77.0326 10.8998 78.3144 9.47766 79.5166 7.89649C79.8675 7.87778 80.223 7.84504 80.5598 7.78422C79.2313 9.59929 77.8185 11.2413 76.635 12.4435C75.3205 13.7767 73.8937 15.2129 72.6493 16.2561C70.6846 17.9121 69.1595 18.8477 69.1595 18.8477C69.1595 18.8477 66.2639 24.6624 67.8403 25.046C68.7572 25.2612 70.577 22.4544 70.577 22.4544C70.577 22.4544 72.9581 18.8196 74.3942 17.1964C76.3496 14.9649 78.029 13.6785 79.7131 13.6504C80.6955 13.6458 81.2709 14.6749 81.2709 14.6749L81.7387 13.9639H84.5876C84.5735 13.9639 79.264 22.9643 78.8477 23.6473ZM62.8817 20.1014C62.8255 20.0827 62.208 19.7926 61.5672 19.2687C60.9309 18.7307 60.6035 18.1226 60.5801 18.0711C60.5567 18.029 60.5333 18.0618 60.4959 18.1086C60.4678 18.1366 60.3602 18.2395 59.3358 19.7365C58.33 21.2288 56.7769 24.2929 58.1803 24.8215C59.0878 25.149 60.5895 23.5631 61.4081 22.5246C62.1659 21.5422 62.877 20.3166 62.9144 20.223C62.9565 20.1435 62.9238 20.1201 62.8817 20.1014ZM64.3085 17.5893C64.5704 16.9063 64.8979 15.5637 64.1962 15.0398C63.4571 14.4691 61.5578 15.7883 61.5484 17.1355C61.5391 18.5156 62.891 19.1377 63.2138 19.2219C63.4009 19.2734 63.4571 19.2687 63.5553 19.119C63.6114 19.0254 64.0418 18.2676 64.3085 17.5893ZM80.6206 15.6854C80.6814 15.5871 80.7048 15.4982 80.7048 15.4982C80.7048 15.4982 80.6487 15.1053 80.2791 15.0866C79.8441 15.0725 79.2453 15.1521 77.6735 16.8923C76.1157 18.6185 75.1614 20.1295 74.3381 21.6358C73.4446 23.2824 73.0844 24.5034 73.5943 24.8075C73.7393 24.901 73.9638 24.915 74.1416 24.8729C74.4925 24.7841 74.8854 24.4613 75.4936 23.7596C75.7789 23.4321 76.0923 22.983 76.4572 22.4544C77.4957 21.037 80.1014 16.5882 80.6206 15.6854ZM86.7395 2.69924C84.756 3.98569 81.9773 5.14583 79.3248 4.89322C78.6512 5.58556 77.9308 6.39018 77.215 7.26964C81.8229 8.18185 85.86 5.3236 88.0025 2.88636C89.3404 1.37069 90 0.00938943 90 0.00938943C90 0.00938943 88.7229 1.41747 86.7395 2.69924ZM73.7908 6.03933C71.6108 4.92129 70.0203 3.55063 68.3643 2.70392C66.7738 1.88994 65.754 1.55313 64.4815 1.73089C64.2664 1.7496 63.9482 1.86188 63.9482 1.86188C63.9482 1.86188 64.6125 4.10732 61.9882 7.89182C59.3357 11.7231 56.9313 11.6997 56.2436 10.6378C55.5279 9.53379 56.4494 7.26964 57.9978 5.24875C59.6164 3.13897 62.456 1.3894 62.456 1.3894C62.456 1.3894 61.5484 0.837395 59.317 2.0911C57.1558 3.33077 53.4087 6.25919 49.9377 11.1992C46.4759 16.1251 45.7929 18.8524 45.2924 20.9855C44.7825 23.1281 45.2456 25.4109 47.6127 25.4109C49.9985 25.4109 52.7491 21.7948 53.5304 20.5364C54.9712 18.1881 55.9161 14.6001 53.942 15.1006C52.9737 15.3392 52.1878 16.4245 51.6919 17.4583C51.1867 18.5109 50.9902 19.5307 50.9902 19.5307C50.9902 19.5307 50.1669 19.816 49.0675 20.644C47.9682 21.4674 47.2478 22.2626 47.2478 22.2626C47.2478 22.2626 47.2572 20.5552 48.6185 17.7811C49.9751 15.0164 52.4825 13.744 53.8906 13.6364C55.1677 13.5288 56.8237 14.6094 55.4203 18.6091C54.0169 22.6182 49.8722 27.4599 45.5029 27.5254C41.4845 27.6002 38.8321 22.4544 44.4363 13.4914C50.63 3.57402 57.909 0.523969 60.276 0.182475C62.6337 -0.159019 63.4056 0.888853 63.4056 0.888853C63.4056 0.888853 65.375 -0.0233566 67.8871 0.145051C70.7781 0.327493 73.0049 2.37646 75.9473 3.80792C75.1848 4.56108 74.4597 5.32359 73.7908 6.03933ZM63.0501 2.16127C63.0501 2.16127 61.3707 2.8349 59.3966 4.99146C57.4365 7.16673 56.2997 9.58525 57.1418 10.2308C57.4692 10.4787 58.2177 10.5068 59.5837 9.29522C60.6409 8.3409 61.7215 7.09188 62.4607 5.3002C63.3261 3.16236 63.0501 2.17998 63.0501 2.16127Z" fill="white"/>
+              </svg>
+            </label>
+            <label for="product02" title="스프라이트">
+              <svg width="90" height="35" viewBox="0 0 90 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="1" clip-path="url(#clip0_222_824)">
+                <path d="M20.2595 10.8305C21.1182 8.51609 22.0315 5.87179 22.8946 3.55768C21.5114 2.39588 20.1917 1.84905 19.3733 1.57784C19.1292 1.49647 14.4735 0.0546499 10.2291 2.7532C9.73173 3.0695 9.03133 3.52174 8.32144 4.33537C6.46364 6.45997 5.81714 9.57415 6.61721 12.1598C6.77994 12.6887 7.1098 13.2626 7.76986 14.4153C9.83106 18.0132 11.3997 18.9625 11.2051 20.8338C11.178 21.0823 11.083 21.9007 10.4501 22.5923C9.69987 23.4151 8.66452 23.528 8.42043 23.5459C6.69824 23.6771 5.38287 22.2533 4.60991 21.4125C3.3759 20.0744 2.83348 18.5963 2.58024 17.5749C1.72152 20.1558 0.85805 22.7414 -0.000671387 25.3224C0.320375 25.7292 0.862796 26.3302 1.68999 26.8411C2.91044 27.5961 4.07224 27.7405 5.24285 27.8809C6.75723 28.0663 7.9414 27.9531 8.35262 27.908C9.85344 27.7409 12.7147 27.4154 15.02 25.2003C16.9276 23.3696 17.6416 21.1501 17.7277 20.0337C17.8999 17.8322 17.0592 16.3405 16.5259 15.396C16.074 14.6004 15.9065 14.6004 14.3698 12.3856C12.9774 10.383 12.6839 9.75926 12.5889 8.95037C12.5347 8.48931 12.3899 7.26445 13.19 6.34234C13.7416 5.7094 14.4603 5.53786 14.6681 5.48802C16.3903 5.09917 17.9091 6.44641 18.3566 6.84408C19.8255 8.14996 20.151 10.1752 20.2595 10.8305Z" fill="white"/>
+                <path d="M23.595 7.99683C20.4442 16.6891 17.2937 25.3859 14.1432 34.0782H20.512C23.1878 26.5565 25.8592 19.0304 28.5354 11.509C29.0192 11.6266 29.5297 11.6673 29.9908 11.8616C30.3749 12.0243 30.8678 12.2955 31.1661 12.9691C31.4736 13.6651 31.5774 14.4608 31.3696 15.4643C31.0397 17.078 30.6959 17.9459 30.1627 19.207C29.489 20.8115 28.5852 22.9589 26.4742 24.9746C25.7511 25.6662 24.7249 26.4978 23.3373 27.2301C24.3635 27.307 25.9501 27.3115 27.8031 26.8277C31.0441 25.9869 33.0195 24.1925 33.4216 23.8172C34.9811 22.3619 35.7449 20.8882 36.2558 19.8803C37.0287 18.3523 38.0142 16.4044 37.761 13.9136C37.6796 13.1363 37.544 11.7982 36.5812 10.555C35.3699 8.98641 33.5979 8.54806 32.4951 8.27244C31.5096 8.02835 30.8905 8.03276 28.2055 8.02395C26.2393 8.01479 24.6391 8.00564 23.595 7.99683Z" fill="white"/>
+                <path d="M41.3751 27.2316L35.1328 27.2814C37.4245 20.8446 39.7119 14.4081 42.0036 7.97123C43.4319 7.98038 44.8605 7.9892 46.2931 7.99835C46.3203 9.22795 46.343 10.4572 46.3701 11.6868C46.5871 11.2664 46.9169 10.6789 47.3963 10.0324C48.0835 9.10591 48.5805 8.44144 49.5026 8.02106C49.7151 7.92614 50.4247 7.6234 51.3831 7.66849C52.4364 7.71832 53.1911 8.15667 53.5165 8.36923C52.7978 10.4576 52.0791 12.5503 51.3604 14.6386C50.7051 13.3639 49.6426 12.5683 48.6032 12.6316C47.8889 12.6767 47.3736 13.1107 46.9986 13.4361C45.9453 14.3491 45.5249 15.556 44.9418 17.0704C44.4174 18.4261 42.3562 24.5239 41.3751 27.2316Z" fill="white"/>
+                <path d="M54.6915 8.84937C52.4947 14.9923 50.2935 21.1396 48.0967 27.2826C50.185 27.3005 52.2777 27.3141 54.3661 27.3324C56.432 21.5963 58.4976 15.8646 60.5588 10.1285C59.8266 10.1871 58.7868 10.1963 57.5799 9.93862C56.3279 9.67215 55.3472 9.21991 54.6915 8.84937Z" fill="white"/>
+                <path d="M59.2588 0.00726828C56.7321 0.156434 54.8743 2.62005 55.3489 5.0562C55.7737 7.24386 57.957 8.7762 60.1809 8.42362C62.1743 8.10732 63.6751 6.36242 63.7429 4.4097C63.8287 2.02779 61.7539 -0.141898 59.2588 0.00726828Z" fill="white"/>
+                <path d="M74.7232 1.78271C73.6519 1.79628 72.5806 1.81424 71.5093 1.8278C71.0663 3.00316 69.7193 6.07225 66.4197 8.15617C64.6341 9.2817 62.9167 9.71563 61.7729 9.90108C61.4881 10.674 61.2033 11.4514 60.9186 12.2243C62.1298 12.2471 63.3459 12.2742 64.5572 12.2965C62.695 17.296 60.8328 22.2954 58.9706 27.2949C61.1131 27.3176 63.2601 27.3447 65.4027 27.3671C67.2154 22.3361 69.0278 17.3007 70.8361 12.265C71.9707 12.283 73.1051 12.2965 74.2442 12.3149C74.7368 10.8547 75.2341 9.39493 75.7267 7.9348C74.6239 7.91683 73.5255 7.89852 72.4223 7.88055C73.1908 5.85088 73.9594 3.8168 74.7232 1.78271Z" fill="white"/>
+                <path d="M87.8808 21.1211C87.3747 22.1608 86.2807 24.0366 84.1561 25.5327C83.4147 26.0571 81.0372 27.5983 77.8596 27.5847C76.9917 27.5803 75.916 27.562 74.7498 26.9338C73.3033 26.1517 72.63 24.9224 72.4174 24.5244C71.3597 22.531 71.7438 20.4878 72.0692 18.8876C72.788 15.3575 74.6956 12.8217 76.0333 11.3707C77.1589 10.1323 78.3023 9.39526 79.08 8.97489C81.4938 7.66392 83.6635 7.61883 84.1202 7.61443C85.2684 7.60527 86.457 7.59646 87.6957 8.34669C88.0798 8.58163 89.5308 9.45425 89.9105 11.1493C90.2722 12.7495 89.4539 14.074 88.9162 14.9507C88.7307 15.249 87.9534 16.4695 86.4166 17.4095C84.8707 18.3588 83.3747 18.5259 81.702 18.7114C80.6622 18.8243 79.7899 18.8334 79.1841 18.8107C79.9255 18.3812 80.8205 17.7665 81.7244 16.8987C83.0624 15.6148 83.8896 14.2906 84.3866 13.3231C85.006 11.8358 85.024 10.6154 84.5266 10.317C84.1469 10.0865 83.4916 10.4028 83.3784 10.4571C82.976 10.6513 82.5512 11.0493 82.0901 11.6504C81.3535 12.604 81.1724 12.9885 81.1501 13.0156C80.4222 14.096 80.0066 15.0046 79.672 15.7413C79.0661 17.0746 78.7634 17.7391 78.5871 18.7066C78.4742 19.326 78.3203 20.2162 78.5556 21.3102C78.7048 21.9974 78.8539 22.6843 79.4099 23.2223C80.3819 24.158 81.9006 23.9545 82.538 23.8732C83.6408 23.7332 84.4049 23.2901 85.8918 22.4314C86.7465 21.9255 87.4245 21.4557 87.8808 21.1211Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_222_824">
+                <rect width="90" height="34.078" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+            </label>
+            <label for="product03" title="환타">
+              <svg width="85" height="64" viewBox="0 0 85 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M79.0331 18.7828C78.672 18.7886 77.7809 18.8003 77.7285 18.8061C76.4996 18.8876 75.6726 18.8935 74.4437 18.975C74.368 18.9808 74.3039 18.9226 74.2923 18.8527C74.0185 16.6046 73.739 14.3332 73.4536 12.0152C73.442 11.9395 73.3779 11.8812 73.2964 11.8871C72.778 11.9337 72.2305 11.9802 71.6831 12.0152C70.0407 12.12 68.3925 12.2249 66.7501 12.318C66.4705 12.3355 66.1909 12.353 65.9172 12.3705C65.4105 12.3996 64.9096 12.4287 64.4029 12.452C61.3162 12.6209 58.2352 12.7898 55.1484 12.9645C54.8456 12.982 54.7 12.8888 54.665 12.5743C54.5835 11.8812 54.5602 11.5551 54.4903 11.159C54.4787 11.0833 54.4029 11.0309 54.333 11.0426C52.6149 11.293 43.9778 12.7141 43.9079 12.5452C42.7314 9.69719 38.905 5.09614 38.8992 5.09032C36.0978 1.66574 31.8753 0.547513 29.7436 0.186418C28.9283 0.0466394 28.4158 0.023343 28.4158 0.023343C28.2643 -0.0116017 26.6219 0.0175189 26.4705 0.0524636L25.2358 0.37279L22.9644 0.966849L19.2835 2.31804L12.3412 5.18351C12.3412 5.18351 10.5357 5.92899 10.9492 6.64536L11.4035 7.65875L12.9819 9.9884C13.0809 10.0991 13.1973 10.2214 13.3197 10.3553C13.6283 10.6815 14.0127 11.06 14.4204 11.4503C15.8415 12.8131 17.5538 14.3332 17.5538 14.3332C17.6411 14.4205 17.5887 14.572 17.4606 14.5778L13.3662 14.9505C13.3662 14.9505 12.4926 15.0496 11.4385 15.1719C10.8386 15.2417 10.1805 15.3233 9.59222 15.3932C9.19036 15.4456 8.81762 15.4922 8.52059 15.5271C6.73258 15.7659 4.94458 15.9872 3.15076 16.2202C2.42274 16.3134 0.628915 16.6221 0.116394 16.7094C0.0406802 16.7211 -0.0117368 16.791 -8.85488e-05 16.8667L4.61261 48.8236C4.62426 48.8702 4.65338 48.9109 4.69997 48.9284L11.2288 51.59L14.0943 52.7607L41.6773 64.007H41.6831C41.7355 64.0012 41.7821 63.9954 41.8345 63.9896C42.679 63.8906 43.5235 63.7741 44.3505 63.6401C44.4437 63.6226 44.5369 63.611 44.6301 63.5935C45.0203 63.5295 45.4105 63.4596 45.7891 63.3897C45.8124 63.3839 45.8357 63.3839 45.859 63.378C46.2667 63.3023 46.6743 63.2208 47.0762 63.1334C47.1694 63.116 47.2568 63.0927 47.3441 63.0752C47.6877 62.9995 48.0314 62.9238 48.3692 62.848C48.4216 62.8364 48.4798 62.8247 48.5322 62.8131C48.9108 62.7257 49.2894 62.6325 49.6563 62.5452C49.7437 62.5219 49.8252 62.5044 49.9125 62.4811C50.2212 62.4054 50.5183 62.3239 50.8153 62.2482C50.8852 62.2307 50.9551 62.2132 51.025 62.1899C51.3686 62.0967 51.7006 62.0035 52.0325 61.9104C52.1141 61.8871 52.1898 61.8638 52.2713 61.8405C52.5334 61.7648 52.7897 61.689 53.0401 61.6133C53.1216 61.59 53.1973 61.5667 53.2789 61.5434C53.5759 61.4503 53.8613 61.3629 54.1409 61.2697C54.2107 61.2464 54.2806 61.2231 54.3505 61.1998C54.566 61.1299 54.7815 61.06 54.9854 60.9902C55.0611 60.961 55.1426 60.9377 55.2183 60.9144C55.4629 60.8329 55.6959 60.7455 55.923 60.6698C55.9813 60.6524 56.0279 60.6291 56.0861 60.6116C56.2608 60.5475 56.4297 60.4835 56.5928 60.4194C56.6569 60.3961 56.7151 60.3728 56.7792 60.3495C56.9714 60.2738 57.1519 60.2039 57.315 60.134C57.3441 60.1224 57.3616 60.1107 57.3907 60.1049C57.5305 60.0466 57.6586 59.9884 57.7809 59.936C57.8217 59.9185 57.8566 59.901 57.8974 59.8836C58.0255 59.8253 58.1478 59.7671 58.241 59.7205L58.34 59.6448L58.3925 59.604L58.6778 59.3769L70.0407 50.4776L84.8165 38.9051C84.8572 38.8702 84.8747 38.8119 84.863 38.7595C84.5136 37.4782 79.732 20.6815 79.2428 18.9401C79.202 18.841 79.1263 18.7828 79.0331 18.7828ZM14.1758 8.45666C13.7856 8.04315 13.4245 7.60634 13.0576 7.17535C13.0168 7.12876 12.9819 7.08217 12.9644 7.0414C12.9236 6.95986 12.9353 6.88997 12.9877 6.82008C13.0168 6.78514 13.0517 6.74437 13.1042 6.7036C13.1682 6.65118 13.3779 6.55217 13.6749 6.42404C13.7856 6.37745 13.9079 6.32503 14.036 6.27262C14.9504 5.89405 16.29 5.38735 16.9539 5.14274C19.0273 4.37395 20.5416 3.65176 21.8811 3.081C22.0151 3.01694 22.1374 2.96452 22.2597 2.9121C22.3296 2.88298 22.3936 2.85386 22.4635 2.83056C22.5625 2.7898 22.6557 2.75485 22.7489 2.71991C22.8363 2.68496 22.9294 2.65002 23.0168 2.61507C23.0983 2.58595 23.1857 2.55683 23.2672 2.52771C23.3662 2.49277 23.4653 2.45782 23.5643 2.42288C23.64 2.39958 23.7215 2.37628 23.7972 2.34716C23.9021 2.31804 24.0011 2.2831 24.1059 2.25398C24.1816 2.23068 24.2632 2.21321 24.3389 2.19574C24.4437 2.16662 24.5485 2.1375 24.6534 2.1142C24.7291 2.09673 24.8106 2.08508 24.8863 2.06761C24.997 2.04431 25.1018 2.02101 25.2125 2.00354C25.2824 1.99189 25.3523 1.98607 25.4222 1.97442C25.4163 1.97442 25.4105 1.98024 25.4047 1.98024C25.9289 1.89871 26.4763 1.85211 27.082 1.85794C31.951 1.89871 33.4653 3.38386 33.8962 3.63429C34.135 3.77407 34.6883 4.17011 34.6883 4.17011C39.2544 7.0181 41.2637 12.9296 41.7588 14.2342C42.8828 17.1812 45.6202 22.1666 45.6784 22.3355C45.7774 22.6092 45.7658 22.7549 45.6027 22.8655C45.5503 22.9005 45.4746 22.9354 45.3872 22.9703C45.2999 22.9995 44.7873 22.2831 44.2049 21.4037C43.3138 20.0641 42.2422 18.3518 42.2422 18.346C40.9842 16.2668 38.8467 15.9057 37.7635 16.0397C37.4722 16.0746 37.1869 16.1328 37.181 16.1328C37.1636 16.1328 37.1286 16.1387 37.082 16.1445C36.9131 16.1678 36.5812 16.2202 36.2317 16.2726C35.9114 16.3192 35.5794 16.3716 35.3348 16.4124C29.8019 17.2744 27.3732 16.9948 25.8357 16.5988C25.4629 16.5056 25.1426 16.4007 24.8456 16.3076C23.1915 15.7892 21.5782 14.869 20.1222 13.8381C19.598 13.4712 19.0972 13.0868 18.6196 12.7024C16.2492 10.7921 14.5369 8.84105 14.1758 8.45666ZM10.7163 29.4817C10.7745 29.8486 10.9784 29.9476 11.3278 29.901C12.6149 29.7321 13.4886 29.604 14.7815 29.4468C15.4455 29.3652 16.1152 29.2779 16.7792 29.2021C16.7908 29.2021 16.7966 29.2021 16.8083 29.1963C16.9131 29.1847 17.0121 29.2371 17.0646 29.3244C17.082 29.3536 17.0937 29.3827 17.0995 29.4176C17.2043 30.1573 17.7751 33.512 17.7867 33.6052C17.7926 33.6634 17.7984 33.7158 17.7984 33.7682C17.81 34.106 17.6877 34.1934 17.2626 34.2342C15.9871 34.3681 14.7116 34.5021 13.4303 34.636C12.8654 34.7001 12.1024 34.8399 11.5724 34.9039C11.4792 34.9156 11.4152 34.9971 11.4268 35.0845C11.4385 35.1952 11.4559 35.4165 11.4559 35.4165L12.3063 46.2726C12.3063 46.2726 12.3063 46.2784 12.3063 46.2901C12.3121 46.3775 12.3412 46.756 12.3587 46.954C12.3645 47.0298 12.3121 47.0938 12.2422 47.1055C11.52 47.2278 11.0366 47.286 10.3202 47.3792C9.84848 47.4433 9.37091 47.4957 8.89333 47.5481C8.41575 47.6005 7.944 47.6413 7.46642 47.6821C7.14027 47.7112 6.80247 47.6646 6.47632 47.6063C6.39479 47.5889 6.31907 47.4316 6.28413 47.3093C6.2783 47.2918 6.27248 47.2802 6.27248 47.2627C6.24918 47.0822 6.22589 46.9074 6.19677 46.7269C6.01622 45.4456 5.83567 44.1585 5.66095 42.8772C5.28238 40.0874 4.90381 37.2977 4.53107 34.5079C4.18162 31.9337 3.84383 29.3536 3.49438 26.7793C3.44779 26.4182 3.40119 26.0571 3.34878 25.696C3.31966 25.498 3.29053 25.3 3.26141 25.1078C3.03427 23.5178 2.78966 21.9337 2.5567 20.3437C2.50428 19.9768 2.46933 19.6098 2.42274 19.2429C2.41692 19.1788 2.41692 19.1206 2.42274 19.0682C2.43439 18.9808 2.46351 18.9051 2.50428 18.8469C2.54505 18.7886 2.59747 18.7537 2.65571 18.7187L2.66153 18.7129C2.79549 18.6372 2.95274 18.6023 3.09251 18.5731C4.63008 18.2936 12.1315 17.3268 15.5911 16.8492C15.9463 16.7968 16.2608 16.756 16.5229 16.7153C16.9423 16.657 17.0354 16.8841 17.0704 17.187C17.1752 17.9558 17.2509 18.4916 17.3499 19.2662C17.4781 20.2563 17.6994 21.5085 17.8566 22.4928C17.9032 22.7956 17.8508 22.9936 17.5771 23.0519C16.7734 23.2208 15.1135 23.4829 15.1135 23.4829C15.1135 23.4829 10.5183 24.2808 10.2736 24.3215C10.1979 24.3332 10.1455 24.4031 10.1572 24.4788C10.3028 25.5446 10.6289 28.8993 10.7163 29.4817ZM34.5893 45.0437C34.566 45.0437 34.5311 45.0496 34.4903 45.0496C33.9195 45.1078 31.8753 45.3815 31.0075 45.5213C30.9376 45.533 30.8735 45.5446 30.8211 45.5504C30.3727 45.6261 30.0989 45.1544 30.0174 44.8981C29.9358 44.6302 28.8817 41.8638 28.2818 40.2796C28.1944 40.0525 28.1187 39.8544 28.0547 39.6855C27.9964 39.5341 27.9556 39.4235 27.9207 39.3419C27.8858 39.2546 27.8625 39.1905 27.8625 39.1905C27.8625 39.1905 27.8042 39.0274 27.7693 38.9401C27.746 38.876 27.6761 38.841 27.612 38.8469C26.4472 39.0449 25.294 39.2371 24.1758 39.4235C24.1117 39.4351 24.0651 39.4817 24.0593 39.5458C23.8322 41.2872 23.0634 45.265 22.976 45.8824C22.9411 46.1387 22.8188 46.2377 22.5509 46.2668C21.718 46.36 20.8852 46.4881 20.0523 46.5871C19.7728 46.6221 19.4932 46.6454 19.2195 46.6687C19.1962 46.6687 19.1671 46.6628 19.1438 46.6628C18.8933 46.6512 18.6254 46.4939 18.3459 46.3774C18.2876 46.3542 18.2527 46.2959 18.2585 46.2318C18.4623 44.1701 18.6662 42.1666 18.8584 40.1631C19.1088 37.6063 19.3418 35.0496 19.598 32.4986C19.8601 29.8894 20.1397 27.286 20.4134 24.6768C20.5416 23.4654 20.6522 22.2598 20.7862 21.0484C20.8211 20.7106 20.8444 20.5417 20.9434 20.4485C21.0424 20.3553 21.2171 20.3437 21.5549 20.3146C23.1624 20.1748 24.7757 20.0408 26.3831 19.8952C26.6802 19.8661 26.8549 19.9069 26.9714 20.2272C27.6528 22.1433 28.3808 24.042 29.0564 25.9523C29.7145 27.8218 30.3319 29.703 30.9725 31.5726C31.7588 33.8673 32.5509 36.1678 33.3371 38.4625C33.9894 40.3495 34.6417 42.2307 35.294 44.1177C35.5037 44.7234 35.3639 44.9971 34.5893 45.0437ZM55.2183 42.65C55.2008 42.6558 55.1717 42.6617 55.1426 42.6675C54.6708 42.7723 52.8887 43.0461 52.1141 43.1742C51.8403 43.2208 51.6889 43.1159 51.52 42.9238C48.4099 39.4235 43.1216 33.279 42.4577 32.5044C42.4111 32.452 42.3878 32.4229 42.3878 32.4229C42.248 32.2656 42.0733 32.3064 42.0733 32.3064L41.9102 32.3472C41.8345 32.3646 41.7879 32.4287 41.7879 32.5102C41.8112 32.8364 42.0325 34.9738 42.1781 36.3774C42.3063 37.6005 42.6557 40.4136 42.8188 41.7473C42.877 42.1899 42.912 42.4695 42.912 42.4695C42.912 42.4695 43.0168 43.4421 43.0285 43.9197C43.0343 44.1759 42.8188 44.2633 42.5683 44.2924C41.1007 44.4671 39.5573 44.6535 38.0896 44.8399C37.9964 44.8515 37.8974 44.8574 37.8042 44.869C37.6237 44.8981 37.4897 44.9156 37.3849 44.9214C37.3791 44.9214 37.3732 44.9214 37.3674 44.9214C37.3441 44.9214 37.3266 44.9214 37.3033 44.9156C37.2801 44.9156 37.2509 44.9156 37.2276 44.9098C37.0529 44.8748 37.0238 44.7059 36.9714 44.2924C36.9655 44.2575 36.9655 44.2284 36.9597 44.1934C36.8898 43.6634 36.8316 43.1334 36.7675 42.6034C36.3773 39.4584 36.022 36.3134 35.6202 33.1684C35.131 29.3419 34.6592 25.5213 34.1583 21.6949C34.1059 21.2814 34.2224 21.1125 34.6359 21.0659C36.156 20.8795 37.6761 20.664 39.1962 20.4718C39.3534 20.4485 39.5049 20.4485 39.6505 20.4602C39.6854 20.4602 39.7145 20.466 39.7495 20.466C39.8776 20.4776 39.9999 20.5009 40.1164 20.53C40.128 20.5359 40.1455 20.5359 40.1572 20.5417C40.2969 20.5825 40.4309 20.6349 40.5648 20.7048C40.5707 20.7106 40.5823 20.7164 40.5882 20.7164C40.7105 20.7805 40.8328 20.8562 40.9492 20.9377C41.1706 21.095 41.3744 21.2872 41.5782 21.5085C42.7489 22.784 43.9894 23.9954 45.2067 25.2359C45.7833 25.8183 46.4181 26.4881 46.983 27.0822C47.0413 27.1462 47.2509 27.4083 47.4839 27.618C47.4839 27.618 47.4839 27.618 47.4897 27.618C47.513 27.6355 47.5421 27.6471 47.5713 27.6529C47.5771 27.6529 47.5771 27.6529 47.5771 27.6529C47.6004 27.6529 47.6237 27.6471 47.647 27.6355C47.6936 27.6122 47.7285 27.5597 47.7169 27.4957C47.449 25.4165 47.1344 23.2615 46.8432 21.1416C46.7326 20.3437 46.6219 19.5516 46.5229 18.7653C46.3249 17.2627 46.2958 17.1462 46.1793 16.3367C46.1385 16.0688 46.0919 15.7193 46.022 15.2185C45.9929 14.9855 46.0628 14.8923 46.2725 14.8457C47.0879 14.6885 48.0022 14.5487 48.8409 14.4322C50.2445 14.24 51.4443 14.1119 51.6598 14.0886C51.6831 14.0886 51.6947 14.0828 51.6947 14.0828C51.7763 14.0769 51.8403 14.0711 51.8986 14.0711C51.9044 14.0711 51.9102 14.0711 51.916 14.0711C51.9219 14.0711 51.9219 14.0711 51.9277 14.0711C51.9976 14.0711 52.0558 14.0769 52.1024 14.0886C52.149 14.1002 52.1781 14.1235 52.2072 14.1526C52.2131 14.1585 52.2189 14.1643 52.2247 14.1701C52.248 14.1992 52.2713 14.24 52.283 14.2866C52.2888 14.2982 52.2888 14.3099 52.2946 14.3215C52.3063 14.374 52.3179 14.4322 52.3296 14.5021C52.347 14.6186 52.3645 14.7525 52.382 14.8923C52.3878 14.9389 52.3936 14.9855 52.3994 15.0379C52.5916 16.4532 52.9294 18.9109 53.11 20.4252C53.343 22.3938 54.8106 34.7933 55.4338 40.1573C55.4571 40.3553 55.4862 40.7048 55.5386 41.3279C55.5561 41.5376 55.5736 41.7706 55.5969 42.0443C55.6318 42.5277 55.4163 42.5918 55.2183 42.65ZM66.9772 41.1241C66.1851 41.1474 65.8007 41.2348 65.0087 41.293C64.3563 41.3396 61.0483 41.689 61.0133 41.689C60.9609 41.6949 60.9201 41.689 60.8735 41.689C60.2853 41.6716 60.2969 41.1882 60.2562 40.7339C60.0116 37.9616 59.7611 35.1835 59.5165 32.4112C59.4117 31.2289 59.3301 30.0816 59.2486 28.9401C59.1671 27.7985 59.0914 26.6512 58.9982 25.4631C58.8992 24.1876 58.7652 22.749 58.6953 21.491C58.6895 21.3745 58.5905 21.2872 58.474 21.2988C58.4274 21.3046 58.375 21.3046 58.3167 21.3105C57.7169 21.3571 56.4938 21.4386 55.7541 21.491C55.3989 21.5143 55.1543 21.5318 55.1484 21.5318C55.0378 21.5434 54.9446 21.491 54.8689 21.427C54.7407 21.3163 54.6708 21.159 54.6534 20.9901L54.0244 16.6279L53.9137 15.6494C53.8962 15.4805 53.9428 15.3116 54.0593 15.1893C54.1234 15.1253 54.1991 15.0729 54.2981 15.067C56.9364 14.9156 60.7337 14.6535 63.4187 14.5021C63.4711 14.4963 63.5293 14.4963 63.5817 14.4904C65.1484 14.4031 67.5421 14.2284 69.1263 14.1119C69.3534 14.0944 69.5631 14.0828 69.7495 14.0653C70.0989 14.042 70.3727 14.0187 70.5416 14.007C70.559 14.007 70.5707 14.007 70.5881 14.007C70.6231 14.007 70.6406 14.0187 70.6639 14.0245C70.6872 14.0303 70.7105 14.0303 70.7279 14.0362C70.7512 14.0478 70.7687 14.0711 70.7862 14.0886C70.7978 14.1002 70.8095 14.106 70.8153 14.1235C70.8269 14.1526 70.8386 14.1818 70.8444 14.2167C70.8444 14.2284 70.8502 14.2342 70.8502 14.24C70.8561 14.2808 70.8619 14.3274 70.8677 14.3681C70.8735 14.3914 70.8735 14.4147 70.8793 14.4322C71.0715 15.6844 71.2463 17.088 71.4385 18.3344C71.5258 18.9109 71.5549 19.4875 71.6481 20.0641C71.753 20.6931 71.1414 20.6465 71.1065 20.6465C70.9725 20.6523 70.757 20.6582 70.495 20.6698C69.3534 20.7222 67.2859 20.8445 66.7326 20.9319C66.6278 20.9494 66.552 21.0367 66.5579 21.1474C66.6277 22.7665 66.6976 24.3448 66.7675 25.9232C66.8665 28.1072 66.9772 30.2913 67.0762 32.4753C67.1694 34.6011 67.2626 36.7327 67.3558 38.8643C67.3849 39.4759 67.3907 40.0932 67.414 40.7048C67.4257 41.0018 67.315 41.1125 66.9772 41.1241ZM82.3761 38.4741C82.3994 38.5557 82.347 38.6372 82.2655 38.6547C81.9044 38.7246 81.5666 38.8003 81.223 38.8527C81.1531 38.8643 81.0774 38.876 80.9958 38.8876C80.4367 38.975 79.6388 39.0915 79.1554 39.1556C78.9224 39.1847 78.7186 39.1672 78.5613 39.0216C78.5031 38.9692 78.4565 38.8993 78.4099 38.8061C78.0372 38.0198 77.4781 36.7618 77.082 35.9872C76.9888 35.8009 76.8782 35.6261 76.7792 35.4689C76.7501 35.4165 76.6918 35.3932 76.6336 35.399C75.7017 35.533 74.9038 35.5854 74.0535 35.7077C73.9953 35.7135 73.9428 35.7659 73.9312 35.8242C73.739 36.9599 73.6924 38.5731 73.5235 39.7088C73.4769 40.0059 73.3721 40.1282 73.075 40.1689C71.8287 40.3378 70.9085 40.5184 69.6621 40.7106C69.633 40.7164 69.6213 40.7106 69.598 40.7106C69.3651 40.7164 69.3651 40.5417 69.3593 40.367C69.3301 39.2895 69.2952 38.2062 69.2777 37.1288C69.2137 32.551 69.1612 27.9733 69.0855 23.4013C69.0797 23.0286 69.1904 22.883 69.5689 22.8247C71.9219 22.4578 74.269 22.0676 76.6161 21.6716C76.6918 21.6599 76.7559 21.6541 76.8199 21.6541C76.8258 21.6541 76.8316 21.6541 76.8374 21.6541C76.8607 21.6541 76.8782 21.6599 76.9015 21.6599C76.9422 21.6657 76.983 21.6774 77.018 21.689C77.0354 21.6949 77.0529 21.7065 77.0704 21.7182C77.1053 21.7415 77.1344 21.7706 77.1577 21.8055C77.1694 21.823 77.1869 21.8346 77.1985 21.8521C77.2335 21.9104 77.2684 21.9802 77.2917 22.0676C77.3383 22.2132 77.3849 22.3588 77.4315 22.4986C77.9731 24.2051 78.5439 25.894 79.0855 27.6005C79.7495 29.6681 80.4076 31.7415 81.0366 33.8207C81.5084 35.3524 81.9277 36.8841 82.3761 38.4741Z" fill="white"/>
+                </svg>                
+            </label>
+            <label for="product04" title="닥터페퍼">
+              <svg width="90" height="62" viewBox="0 0 90 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M88.7771 14.2409C85.9331 6.77353 78.5275 1.87543 68.9099 0C76.7345 2.32196 82.6562 6.89718 85.1431 13.4165C90.7556 28.1314 76.7208 47.1468 53.7966 55.8851C43.6157 59.7664 33.4142 60.9412 24.7034 59.787L23.7554 60.1992C33.2905 62.322 45.182 61.3739 57.0322 56.8537C80.1831 48.033 94.3897 28.9489 88.7771 14.2409Z" fill="white"/>
+                <path d="M46.4119 34.9325C45.9585 30.2405 42.2763 30.213 42.2763 30.213C40.4421 30.2474 38.8758 31.9648 38.0377 33.0845C37.9553 32.3632 37.914 31.9373 37.914 31.9373L33.0572 33.9982C33.0572 33.9982 34.0327 34.6577 34.1563 35.75L34.8914 42.2281C33.3319 45.6355 30.22 50.355 26.1256 46.1095C26.1256 46.1095 32.7343 46.3019 32.748 39.7069C32.748 39.7069 32.8236 35.0699 27.4652 36.1278C27.4652 36.1278 20.994 37.701 21.7084 45.0378C21.7084 45.0378 22.1618 51.303 27.5339 51.2274C31.271 51.1725 33.7853 48.0605 35.2349 45.2302L35.9974 51.9281C35.9974 51.9281 36.0867 54.1952 35.3723 55.5691L41.1497 53.1303C41.1497 53.1303 40.1742 52.4915 39.9887 50.7809C39.9337 50.2588 39.7208 48.3078 39.446 45.8485C44.8318 45.5118 46.8378 39.2879 46.4119 34.9325ZM25.5211 43.9662C25.0402 41.3282 25.8371 38.7383 27.4309 38.5872C29.0315 38.436 29.3132 41.4656 28.269 42.8189C27.2248 44.1723 25.5211 43.9662 25.5211 43.9662ZM39.1849 43.499C38.8895 40.8336 38.5735 37.9483 38.3331 35.7225C39.4872 34.1906 41.9053 32.6449 42.3793 37.3781C42.8396 41.9877 40.4833 43.1899 39.1849 43.499Z" fill="white"/>
+                <path d="M50.9731 12.1594L51.983 20.8496C51.983 20.8496 52.0723 23.1166 51.3578 24.4905L56.8811 22.0792C56.8811 22.0792 55.9056 21.4404 55.7201 19.7298C55.6239 18.8436 55.3217 16.3842 55.0194 13.6707C54.9782 12.1182 56.4689 10.7374 57.1696 10.6961C57.9596 10.648 58.5161 11.3831 58.5504 12.1113C58.5779 12.812 57.4719 13.2791 57.4719 13.2791C60.5976 13.9318 61.6418 10.9503 61.5319 9.89925C61.4151 8.85505 60.7419 7.22006 58.2894 7.05519C56.9154 6.95901 55.5621 8.19556 54.6072 9.55576C54.5248 8.82757 54.4767 8.3673 54.4767 8.3673L49.8809 10.4007C49.8809 10.4076 50.8564 11.0671 50.9731 12.1594Z" fill="white"/>
+                <path d="M21.2961 53.7829C21.2961 53.7829 19.7505 52.7662 19.4551 50.0526C19.3314 48.9535 18.8024 44.1035 18.2116 38.7107C20.8908 38.0512 32.4663 34.4721 31.113 22.2028C31.113 22.2028 29.478 12.9631 19.8672 13.5195C10.2634 14.0828 -0.0274239 26.5651 5.49105e-05 36.4781C0.0275337 46.3911 4.64398 52.0586 10.0779 54.3943C10.0779 54.3943 3.00212 49.558 3.20134 39.4939C3.40743 29.4298 8.18187 25.7888 10.1397 23.7623C12.0976 21.7426 18.9811 17.4284 23.4464 21.1792C27.7193 24.7652 23.7074 34.5202 17.8475 35.5232C17.0781 28.5436 16.3293 21.7151 16.3293 21.7151C16.3293 21.7151 11.6305 24.353 10.3115 26.5514L13.0937 51.8731C13.0937 51.8731 13.238 55.4728 12.1045 57.6574L21.2961 53.7829Z" fill="white"/>
+                <path d="M59.3542 29.3954C58.9008 24.7034 55.2187 24.6691 55.2187 24.6691C53.3844 24.7034 51.8182 26.4208 50.98 27.5475C50.8976 26.8262 50.8564 26.4002 50.8564 26.4002L45.9995 28.4611C45.9995 28.4611 46.975 29.1206 47.0987 30.2129L48.9329 46.3911C48.9329 46.3911 49.0222 48.6581 48.3146 50.032L54.092 47.5864C54.092 47.5864 53.1165 46.9475 52.931 45.237C52.8761 44.7149 52.6631 42.7639 52.3883 40.3045C57.7673 39.9748 59.7733 33.7439 59.3542 29.3954ZM52.1273 37.9619C51.8319 35.2965 51.5159 32.4112 51.2686 30.1854C52.4227 28.6535 54.8408 27.1078 55.3148 31.8342C55.782 36.4437 53.4188 37.6459 52.1273 37.9619Z" fill="white"/>
+                <path d="M59.8559 28.6878C59.8559 28.6878 60.3093 34.953 65.6814 34.8775C69.446 34.8225 71.974 31.6624 73.4098 28.8184C73.3892 29.5809 73.2793 30.9549 72.7915 31.9097L78.3079 29.4985C78.3079 29.4985 77.3324 28.8596 77.1469 27.1559C77.0507 26.2628 76.7485 23.8104 76.4462 21.09C76.405 19.5374 77.8957 18.1566 78.5964 18.1154C79.3864 18.0673 79.9429 18.8023 79.9772 19.5374C80.0047 20.2381 78.9056 20.7053 78.9056 20.7053C82.0313 21.3579 83.0755 18.3764 82.9656 17.3254C82.8488 16.2743 82.1687 14.6462 79.7231 14.4744C78.356 14.3851 76.9958 15.6148 76.0409 16.9819C75.9585 16.2468 75.9104 15.7934 75.9104 15.7934L71.3145 17.8268C71.3145 17.8268 72.29 18.4863 72.4137 19.5786L73.1281 25.7133C71.5962 29.1344 68.4499 34.0737 64.2868 29.7595C64.2868 29.7595 70.9024 29.9519 70.9092 23.357C70.9092 23.357 70.9848 18.7199 65.6264 19.7778C65.6127 19.7778 59.1414 21.351 59.8559 28.6878ZM65.5783 22.2372C67.1721 22.0861 67.4606 25.1156 66.4164 26.4689C65.3722 27.8223 63.6617 27.6162 63.6617 27.6162C63.1877 24.9782 63.9777 22.3883 65.5783 22.2372Z" fill="white"/>
+                <path d="M31.5115 12.2487L33.3595 28.5849C33.3595 28.5849 33.4488 30.8519 32.7343 32.2258L40.9574 28.7497C40.9574 28.7497 49.9841 25.3699 49.2903 14.7424C48.5965 4.10812 39.7002 6.43695 37.6874 7.12392L30.0689 10.3939C30.062 10.4008 31.3947 11.1564 31.5115 12.2487ZM43.7671 15.9584C44.7907 24.4493 38.498 26.7301 38.498 26.7301L36.7737 11.019C38.3056 10.0573 42.7435 7.46053 43.7671 15.9584Z" fill="white"/>
+                <path d="M80.3204 26.6956L79.606 26.9636L79.8327 28.784L80.1281 28.6741L80.0319 27.8978L80.3204 27.7879L80.7463 28.4405L81.0898 28.31L80.6295 27.6711C80.8906 27.5543 81.0143 27.362 80.973 27.0323C80.9456 26.8399 80.8837 26.6819 80.7395 26.6269C80.6158 26.5926 80.4509 26.6475 80.3204 26.6956ZM80.6776 27.0941C80.7051 27.3276 80.5952 27.417 80.4303 27.4719L79.9975 27.6368L79.9357 27.1284L80.2998 26.991C80.4303 26.9361 80.6433 26.8605 80.6776 27.0941Z" fill="white"/>
+                <path d="M80.0732 25.9744C79.3107 26.256 78.7817 27.2452 78.8985 28.1727C79.0153 29.1069 79.7297 29.629 80.4923 29.3474C81.2479 29.0657 81.77 28.0765 81.6532 27.1491C81.5433 26.2148 80.8289 25.6927 80.0732 25.9744ZM81.3991 27.2384C81.4952 28.0009 81.0762 28.7978 80.4579 29.0245C79.8396 29.2581 79.2557 28.8321 79.1595 28.0765C79.0634 27.3208 79.4893 26.5239 80.1076 26.2904C80.7327 26.0568 81.3029 26.4827 81.3991 27.2384Z" fill="white"/>
+                </svg>                
+            </label>
+            <label for="product05" title="미닛메이드">
+              <svg width="90" height="41" viewBox="0 0 90 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59.2124 35.1329V36.5195C59.2124 36.5195 76.8081 36.5292 87.6956 36.539V35.0743C87.7054 35.0646 59.2124 35.1329 59.2124 35.1329Z" fill="white"/>
+                <path d="M45.8543 24.1771C44.1358 23.142 42.0559 22.6147 39.6441 22.6147C37.2225 22.6147 35.1621 23.142 33.4338 24.1771C31.7152 25.2024 30.8462 26.5206 30.8462 28.1122C30.8462 29.7429 31.7152 31.0611 33.4338 32.0766C35.1621 33.0824 37.2127 33.5999 39.6441 33.5999C42.0559 33.5999 44.1358 33.0921 45.8543 32.0766C47.5827 31.0513 48.4419 29.7331 48.4419 28.1122C48.4419 26.5206 47.5827 25.2024 45.8543 24.1771ZM35.6504 31.5005C35.5039 31.354 35.3769 31.188 35.25 31.0025C34.7032 30.2018 34.42 29.2156 34.42 28.0829C34.42 26.9307 34.6934 25.9347 35.2402 25.1438C35.2988 25.0559 35.3477 24.9875 35.4062 24.9192C35.8359 24.9192 35.8652 24.9192 36.3143 24.9192C36.3143 24.9192 36.0995 25.1535 35.9042 25.4758C35.6894 25.8175 35.5137 26.2472 35.4551 26.3936C35.2793 26.8819 35.1817 27.4482 35.1817 28.0829C35.1817 29.0496 35.416 29.8893 35.8749 30.5631C36.1679 31.0025 36.4608 31.3052 36.7245 31.5005C36.744 31.5005 36.0507 31.5005 35.6504 31.5005ZM39.6441 31.9301C38.6188 31.9301 37.8181 31.5591 37.242 30.817C36.6463 30.0749 36.3632 29.1668 36.3632 28.1122C36.3632 27.0381 36.6463 26.1398 37.242 25.3976C37.8181 24.6555 38.6285 24.2943 39.6441 24.2943C40.6889 24.2943 41.4993 24.6555 42.0559 25.3976C42.6418 26.13 42.925 27.0381 42.925 28.1122C42.925 29.1668 42.632 30.0749 42.0461 30.817C41.47 31.5591 40.6693 31.9301 39.6441 31.9301ZM44.1162 31.0025C43.9991 31.188 43.8624 31.354 43.7257 31.5005C43.3253 31.5005 42.6418 31.5005 42.6418 31.5005C42.9054 31.3052 43.1984 31.0025 43.4913 30.5631C43.9502 29.8893 44.1846 29.0594 44.1846 28.0829C44.1846 27.4482 44.0967 26.8819 43.9112 26.3936C43.8526 26.2472 43.6768 25.8175 43.462 25.4758C43.257 25.1535 43.0519 24.9192 43.0519 24.9192C43.5011 24.9192 43.5304 24.9192 43.96 24.9192C44.0186 24.9875 44.0869 25.0657 44.126 25.1438C44.6826 25.9347 44.956 26.9307 44.956 28.0829C44.9462 29.2156 44.6728 30.2018 44.1162 31.0025Z" fill="white"/>
+                <path d="M88.1351 29.7527C87.1 29.7527 86.27 30.5729 86.27 31.5689C86.27 32.5551 87.0805 33.3753 88.1351 33.3753C89.1896 33.3753 90.0001 32.5454 90.0001 31.5591C90.0001 30.5631 89.1896 29.7527 88.1351 29.7527ZM88.1351 33.1703C87.1977 33.1703 86.4946 32.4477 86.4946 31.5689C86.4946 30.6803 87.2074 29.948 88.1448 29.948C89.092 29.948 89.795 30.6608 89.795 31.5591C89.7853 32.4477 89.0725 33.1703 88.1351 33.1703Z" fill="white"/>
+                <path d="M89.0237 31.1783C89.0237 30.7779 88.721 30.5436 88.2523 30.5436H87.3638V32.4672H87.8032V31.852H88.1547L88.5746 32.4672H89.0823L88.6039 31.7837C88.848 31.686 89.0237 31.4907 89.0237 31.1783ZM88.2426 31.481H87.8129V30.9146H88.2426C88.4672 30.9146 88.5941 31.0123 88.5941 31.1978C88.5843 31.3736 88.4672 31.481 88.2426 31.481Z" fill="white"/>
+                <path d="M63.4111 25.0071V29.1571L63.3916 30.3776C63.3916 30.8659 64.1435 31.6958 66.028 31.6958L66.9654 31.6861H83.741V30.3972C83.741 30.4167 69.0453 30.3972 69.0453 30.3972V24.3529H83.741V23.0444C83.741 23.0542 69.1625 23.0542 65.1785 23.0444C65.1785 23.0542 63.4111 26.3351 63.4111 25.0071ZM67.0045 24.3431H67.8345V30.3874H67.0045V24.3431Z" fill="white"/>
+                <path d="M67.0632 11.9128L68.772 11.9225H69.7972V1.66974L70.9006 1.28892C71.3596 1.16198 71.6818 0.781165 71.7111 0.34176V0H64.622L64.6122 7.87024H51.518L51.4887 2.67549V2.02127V2.0115C51.4887 2.08962 51.4887 2.1775 51.4887 2.30444C51.4887 3.65195 49.731 0.351524 49.731 0.351524H49.9263C48.0613 0.351524 46.0986 0.351524 46.0986 0.361289V7.61636L46.0889 7.82142C46.0889 8.30965 46.8407 9.1494 48.7253 9.1494L49.1256 9.13963H64.622V9.19822C64.622 11.8347 65.1884 11.9518 67.0632 11.9128ZM68.0006 1.51351H68.8305V11.1609H68.0006V1.51351ZM50.3365 7.82142H49.5065V2.0115H50.3365V7.82142Z" fill="white"/>
+                <path d="M26.0031 22.2534H23.4644C23.4839 22.2632 23.4741 30.9048 23.4741 36.2851L23.4644 37.7693C23.4644 40.3179 23.9819 40.5132 25.7004 40.4936H27.4483H27.7608V24.2063C27.7608 25.5538 26.0031 22.2534 26.0031 22.2534ZM26.589 39.7418H25.759V23.9134H26.589V39.7418Z" fill="white"/>
+                <path d="M51.6255 35.7774V37.7791C51.6255 40.9331 52.4164 40.4839 55.297 40.4839L56.332 40.5035H56.7617V25.2219L56.7714 23.9232L57.8748 23.5424C58.3337 23.4155 58.656 23.0347 58.6853 22.5952V22.2535H51.6353C51.6255 22.1949 51.6255 30.3483 51.6255 35.7774ZM54.7502 23.8353H55.5704V39.7418H54.7502V23.8353Z" fill="white"/>
+                <path d="M19.6463 22.2534H17.1173C17.127 22.2632 17.1368 24.4212 17.1368 27.536H14.3832V24.9387L13.2115 24.5871V33.4338H12.3815V24.5676H13.1626L8.13388 23.0736H0V23.4154C0.0292937 23.8548 0.351524 24.2356 0.810459 24.3626L1.89433 24.7336C1.89433 24.7531 1.91385 24.7824 1.91385 24.802V25.3878V32.1254V33.0726L1.93338 33.385C1.93338 33.8635 2.69502 34.713 4.56982 34.713H4.69676H6.35673H9.12987H14.3734V30.1627H17.127C17.1173 32.6234 17.1075 35.0645 17.1075 36.9589V38.1306C17.1661 40.3667 17.7422 40.4936 19.451 40.4741H21.0329H21.4137V23.7865L21.4039 23.7669C21.4039 23.7669 21.4039 23.9329 21.4039 24.2063C21.4137 25.5538 19.6463 22.2534 19.6463 22.2534ZM5.36075 33.4338H4.54052V24.5676H5.37051V33.4338H5.36075ZM9.81339 33.4436H6.53249V24.5774H9.80362V33.4436H9.81339ZM20.2615 39.7418H19.4315V23.9134H20.2615V39.7418Z" fill="white"/>
+                <path d="M13.2114 24.5774V24.5871L14.3831 24.9386V24.4114C14.3831 23.9231 13.6312 23.0931 11.7564 23.0931L8.14355 23.0834L13.1723 24.5774H13.2114Z" fill="white"/>
+                <path d="M19.6465 22.2534C19.6465 22.2534 21.4139 25.5538 21.4139 24.2063C21.4139 23.9329 21.4139 23.7669 21.4139 23.7669L22.0974 23.5521C22.5563 23.4252 22.8688 23.0443 22.8981 22.6049V22.2632H20.5839H19.6465V22.2534Z" fill="white"/>
+                <path d="M26.0029 22.2534C26.0029 22.2534 27.7606 25.5538 27.7606 24.2063V23.7669L28.4441 23.5521C28.903 23.4252 29.2252 23.0443 29.2448 22.6049V22.2632H26.9599H26.0029V22.2534Z" fill="white"/>
+                <path d="M65.1784 23.0444H64.2312C64.1921 23.0444 64.1726 23.0444 64.1726 23.0444H61.9268V23.396C61.9463 23.8354 62.2783 24.2162 62.7275 24.3431L63.411 24.5579C63.411 24.6654 63.411 24.7337 63.411 24.7435C63.411 24.8118 63.411 24.8997 63.411 25.0071C63.411 26.3351 65.1784 23.0542 65.1784 23.0444Z" fill="white"/>
+                <path d="M51.4886 2.29471C51.4886 2.17754 51.4886 2.07989 51.4886 2.00177C51.4886 1.90413 51.4886 1.8553 51.4886 1.8553L52.1721 1.64048C52.631 1.52331 52.9533 1.13273 52.9826 0.693321V0.341797H49.9262H49.731C49.731 0.341797 51.4886 3.64222 51.4886 2.29471Z" fill="white"/>
+                <path d="M34.6348 15.5647C34.6348 18.7187 35.4257 18.2695 38.2965 18.2695H39.7514V1.66974L40.8646 1.28892C41.3235 1.16198 41.6457 0.781165 41.6653 0.34176V0H34.625C34.6543 0.00976457 34.6445 8.64164 34.6348 14.0122V15.5647ZM37.779 1.60139H38.5992V17.5079H37.779V1.60139Z" fill="white"/>
+                <path d="M18.709 12.5181L19.2656 12.5084H31.0026V2.39229L30.9831 2.17747C30.9831 1.68924 30.2312 0.849487 28.3467 0.849487H28.2099H14.5981V1.19125C14.6274 1.63065 14.9497 2.02124 15.3988 2.13841L16.0824 2.35323C16.0824 2.35323 16.0824 2.41182 16.0824 2.50946L16.0628 10.6433L16.0726 10.8386V11.1804C16.0824 11.6784 16.8342 12.5181 18.709 12.5181ZM29.0106 2.3337H29.8406V11.2097H29.0106V2.3337ZM21.5993 2.3337H25.5247V11.2097H21.5993V2.3337ZM19.6074 2.3337H20.4374V11.2097H19.6074V2.3337Z" fill="white"/>
+                <path d="M66.8578 18.0546C67.932 18.2206 69.0549 18.455 70.0802 18.0351C70.7832 17.7519 71.6132 16.6876 71.6132 16.6876L70.6367 15.8283C70.6367 15.8283 69.8556 16.4239 69.2306 16.4337C68.4202 16.4532 68.2932 16.3361 67.1996 16.092C66.3794 15.8967 65.6177 15.6623 64.778 15.3401C62.6103 14.4906 61.5264 13.9828 61.5264 12.3033V11.8151C61.5264 11.4733 61.5264 10.8093 61.5264 10.8093C61.5264 10.8093 57.4546 10.8093 57.4643 10.7996H54.1932V11.1316C54.2127 11.5514 54.5154 11.9225 54.9548 12.0299L55.7848 12.235C55.7848 12.235 55.7848 12.3424 55.7848 12.4986C55.6774 14.0023 54.5154 14.5296 52.2794 15.3401C51.0295 15.7893 50.0433 16.0822 49.1352 16.2872C48.5102 16.3849 47.9244 16.4337 47.4264 16.4239C46.8014 16.4239 46.2546 16.297 46.0593 16.2384L45.7859 17.0391C45.7566 17.127 46.5866 17.5859 46.655 17.6152C47.2408 17.9277 47.9634 18.2987 48.6469 18.2402C50.2776 18.1035 51.879 17.83 53.4511 17.4102C55.365 16.9024 56.9859 16.1017 58.3431 14.9886C58.431 14.9202 58.5189 14.9007 58.6166 14.9007C58.7142 14.9007 58.8118 14.93 58.8802 14.9886C60.2179 16.1115 61.8389 16.9317 63.7722 17.4199C64.7975 17.6836 65.8326 17.8984 66.8578 18.0546ZM53.1679 16.9512C51.8204 17.3223 50.4436 17.5371 49.0668 17.8008C48.7446 17.8593 48.4126 17.8398 48.0904 17.7715C48.0318 17.7617 47.3775 17.5957 47.3873 17.5469L47.5533 17.0977C47.9244 17.293 48.1294 17.3125 48.52 17.3028C48.7641 17.293 49.8089 17.1563 49.8089 17.1563C49.8089 17.1563 51.8595 16.7462 53.0215 16.4239C54.906 15.9064 56.4488 15.096 57.767 13.9926L58.1479 14.4222C56.7906 15.5744 55.1111 16.4142 53.1679 16.9512ZM60.4718 12.6646L60.4425 11.2878L61.087 11.278L61.1163 12.6548C61.1163 12.9575 61.1651 13.2798 61.2628 13.5727C61.6631 14.7737 63.2743 15.3206 64.3679 15.7307C65.3932 16.1115 68.469 16.795 68.8303 16.8634C69.1525 16.9317 69.5333 16.8731 69.8067 16.6974L70.3633 17.0489C70.2071 17.2149 70.0118 17.3223 69.797 17.3906C69.5138 17.4785 69.1916 17.4785 68.8791 17.3906C68.8791 17.3906 64.9538 16.5704 63.7332 16.0627C61.7705 15.2424 60.4718 14.5687 60.4718 12.6646Z" fill="white"/>
+                </svg>                
+            </label>
+            <label for="product06" title="조지아">
+              <svg width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M45.689 10.837C46.1705 10.8654 46.6802 10.8842 47.0578 10.8842H47.4165L50.0031 16.4255H54.1378L50.8904 9.77978C52.3536 8.84523 53.4203 7.24989 53.4203 5.13535C53.4203 1.64258 50.6827 0.0755615 46.2554 0.0755615C44.7073 0.0755615 42.8665 0.26436 41.8281 0.462597V16.4255H45.6985V10.837H45.689ZM45.689 3.22849C46.1233 3.18129 46.5481 3.15297 46.803 3.15297C48.5777 3.15297 49.2856 4.02144 49.2856 5.39022C49.2856 6.55133 48.8042 7.19325 48.2945 7.50476C47.8602 7.76908 47.3316 7.939 46.4726 7.939C46.2177 7.939 45.9628 7.939 45.689 7.91068V3.22849Z" fill="white"/>
+                <path d="M62.19 16.5953C63.757 16.5953 65.6355 16.2366 67.0232 15.6324V8.35427H63.606V13.4424C63.2284 13.4896 62.8508 13.5179 62.492 13.5179C59.9055 13.5179 59.0748 10.8936 59.0748 8.36371C59.0748 5.82438 60.1038 3.19065 62.6997 3.19065C63.7098 3.19065 64.5971 3.36056 65.56 3.71928L66.9288 1.14219C65.8904 0.490835 64.4744 0.0377197 62.8036 0.0377197C57.5927 0.0377197 54.959 3.69096 54.959 8.36371C54.9496 12.9515 57.5833 16.5953 62.19 16.5953Z" fill="white"/>
+                <path d="M24.534 13.4613H18.8323V9.8269H23.1652V6.86277H18.8323V3.24729H24.534V0.292603H14.9619V16.416H24.534V13.4613Z" fill="white"/>
+                <path d="M32.634 16.7086C37.0896 16.7086 39.6478 12.9327 39.6478 8.06167C39.6478 3.70988 37.4011 0 32.9172 0C28.4332 0 25.9316 3.77596 25.9316 8.64695C25.9316 13.0271 28.1595 16.7086 32.634 16.7086ZM31.1991 3.9742C31.5578 3.52108 32.0109 3.08685 32.7945 3.08685C34.6164 3.08685 35.532 5.39962 35.532 8.30711C35.532 9.94021 35.2299 11.8943 34.3426 12.9327C34.0122 13.2725 33.5591 13.6312 32.8228 13.6312C30.897 13.6312 30.038 11.0824 30.038 8.42983C30.0286 6.64569 30.4345 4.86155 31.1991 3.9742Z" fill="white"/>
+                <path d="M8.65639 13.433C8.27879 13.4802 7.9012 13.5085 7.54248 13.5085C4.95595 13.5085 4.12524 10.8842 4.12524 8.35431C4.12524 5.81498 5.15418 3.18125 7.74072 3.18125C8.75079 3.18125 9.63814 3.35117 10.601 3.70988L11.9698 1.13279C10.9314 0.481436 9.51542 0.0283203 7.84456 0.0283203C2.63373 0.0283203 0 3.68156 0 8.35431C0 12.9515 2.63373 16.5953 7.2404 16.5953C8.80743 16.5953 10.686 16.2366 12.0736 15.6325V8.35431H8.65639V13.433Z" fill="white"/>
+                <path d="M88.9707 1.5764C88.9707 1.17993 88.6497 1.01001 88.1494 1.01001C87.9889 1.01001 87.7435 1.02889 87.5547 1.05721V2.88855H87.9228V2.21832H88.1022C88.1494 2.21832 88.1966 2.21832 88.2438 2.20888L88.612 2.89799H89.0462L88.5931 2.13336C88.848 2.01064 88.9707 1.80296 88.9707 1.5764ZM88.3854 1.86904C88.3004 1.89736 88.1966 1.9068 88.0928 1.9068H87.9228V1.34041C87.9984 1.33097 88.0739 1.33097 88.1211 1.33097C88.4137 1.33097 88.5836 1.39705 88.5836 1.60472C88.5836 1.74632 88.4798 1.82184 88.3854 1.86904Z" fill="white"/>
+                <path d="M73.7825 0.292603H69.9121V16.4254H73.7825V0.292603Z" fill="white"/>
+                <path d="M80.2395 0.292603L75.4629 16.4254H79.4182L80.23 13.1497H84.4308L85.186 16.4254H89.1413L84.3553 0.292603H80.2395ZM80.9003 10.28L82.2879 4.55944L83.685 10.28H80.9003Z" fill="white"/>
+                <path d="M88.2249 0.245483C87.2243 0.245483 86.4502 1.01956 86.4502 1.98242C86.4502 2.95473 87.2243 3.74769 88.2249 3.74769C89.2255 3.74769 89.9996 2.96417 89.9996 1.98242C89.9996 1.02899 89.2255 0.245483 88.2249 0.245483ZM88.2249 3.45505C87.4225 3.45505 86.7806 2.82258 86.7806 1.98242C86.7806 1.17059 87.4225 0.53812 88.2249 0.53812C89.0178 0.54756 89.6786 1.17059 89.6786 1.99186C89.6786 2.82258 89.0178 3.45505 88.2249 3.45505Z" fill="white"/>
+                <path d="M69.8554 30.3115C69.7422 30.2454 69.5911 30.2171 69.4307 30.236C69.1663 30.2548 68.9209 30.3681 68.7038 30.5664C68.6283 30.6324 68.4961 30.7363 68.3545 30.8496C68.2224 30.9534 68.0807 31.0667 67.9958 31.1422C67.184 31.803 65.4848 32.662 64.3426 32.8319L64.1632 32.8508C64.0971 32.8414 64.0216 32.8319 63.9461 32.8225C63.7478 32.8036 63.5118 32.7753 63.3042 32.7092C63.4741 32.5582 63.7101 32.3788 63.9366 32.2089L64.0594 32.1145C64.2198 31.9918 64.6163 31.6048 64.6163 31.5953C64.7296 31.482 64.8523 31.3121 64.9656 31.1516C65.0033 31.095 65.0317 31.0478 65.0694 31.01L65.4187 30.5286C65.5886 30.2926 65.7208 30.0283 65.8152 29.7545C65.9568 29.3203 66.0512 29.1221 66.1267 28.9616C66.2022 28.8105 66.2494 28.6878 66.3249 28.4424C66.3816 28.2253 66.4099 28.027 66.4382 27.8288C66.4571 27.6966 66.476 27.5739 66.5043 27.4701C66.5326 27.3379 66.542 27.2246 66.5137 27.0453C66.5137 26.9792 66.5043 26.9131 66.4948 26.8565C66.4571 26.5638 66.2494 26.3184 65.9379 26.1863C65.6736 26.0824 65.3715 26.073 65.1072 26.1674C65.0222 26.1957 64.9373 26.224 64.8334 26.2523C64.6541 26.309 64.4747 26.3656 64.2576 26.46C64.0216 26.5638 63.7856 26.6771 63.5118 26.8376C63.3702 26.9131 63.2664 26.9981 63.1626 27.0642C63.0965 27.1114 63.0304 27.168 62.9549 27.2152C62.549 27.4701 62.2563 27.6966 62.0109 27.961C61.7466 28.2442 61.5578 28.4518 61.369 28.6973C61.3218 28.7539 61.1802 28.9616 61.1424 29.0277L61.0291 29.1976C60.9347 29.3297 60.8403 29.4808 60.7365 29.6413C60.4816 30.0566 60.2456 30.6985 60.1984 30.9628C60.1984 30.9817 60.1796 31.0667 60.1418 31.1894C60.104 31.3971 60.1135 31.6236 60.1796 31.8785C60.1512 31.9352 60.1324 31.9446 60.1324 31.9446C59.3111 32.5959 57.6685 33.4078 56.5263 33.5588L56.347 33.5777C56.2714 33.5683 56.1865 33.5588 56.0921 33.5494C55.9127 33.5305 55.7145 33.5116 55.5446 33.4739C55.7334 33.3511 55.8938 33.219 56.0638 33.0774C56.1582 33.0019 56.2526 32.9169 56.3564 32.8508C56.5074 32.7375 56.6301 32.6337 56.734 32.5393C56.9228 32.3599 57.0644 32.1995 57.1777 32.0579C57.2343 31.9824 57.2909 31.8974 57.357 31.8124L57.5741 31.5198C57.7724 31.2555 57.9612 30.7457 58.0178 30.6041C58.1028 30.3681 58.1783 30.1888 58.2349 30.0283L58.2538 29.9905C58.3577 29.7357 58.4332 29.528 58.5181 29.2542C58.5842 29.0371 58.6125 28.8389 58.6408 28.6501C58.6597 28.5085 58.6786 28.3952 58.7069 28.2914C58.7352 28.1592 58.7447 28.0459 58.7258 27.8666C58.7258 27.8005 58.7164 27.7438 58.7164 27.6872C58.688 27.3946 58.4804 27.1397 58.1689 27.0075C57.914 26.8942 57.6119 26.8848 57.3476 26.9792C57.2626 27.0075 57.1682 27.0358 57.0738 27.0642C56.8945 27.1208 56.7057 27.1774 56.4886 27.2624C56.2431 27.3662 56.0166 27.4795 55.7334 27.6306C55.5918 27.7061 55.4785 27.791 55.3841 27.8571C55.3086 27.9138 55.2236 27.9704 55.1292 28.027C54.7894 28.2158 54.4684 28.4707 54.1758 28.7822C54.1663 28.7917 54.1569 28.8105 54.138 28.82C54.1758 28.7445 54.1947 28.6406 54.1569 28.4801C54.0908 28.2442 53.9681 28.0554 53.9398 28.0176L53.902 27.9798C53.8737 27.961 53.7227 27.8571 53.5339 27.8194C53.2979 27.7533 53.1185 27.7722 53.0807 27.7722L53.043 27.7816C52.9958 27.791 52.8353 27.8288 52.6937 27.8477C52.6748 27.8477 52.42 27.8949 52.2878 27.9704C52.2595 27.9798 52.1556 28.0082 52.014 28.0365C51.948 28.0554 51.7592 28.0648 51.712 28.0742C51.6553 28.0931 51.627 28.0931 51.6081 28.0931C51.5987 28.0931 51.5798 28.0931 51.542 28.0931C51.4854 28.0931 51.4004 28.0931 51.306 28.0931L51.5704 27.404L51.7214 27.0642L51.7969 26.8754C51.8347 26.781 51.8819 26.6771 51.9291 26.5827L51.9668 26.5072C52.0046 26.4411 52.0329 26.3656 52.0707 26.2995L52.4388 25.5349C52.4766 25.4594 52.5144 25.3839 52.5616 25.3083L52.7976 24.8835C52.8259 24.8269 52.8636 24.7703 52.9014 24.7136L53.1657 24.2983C53.2035 24.2416 53.2318 24.1944 53.279 24.1378L53.3639 24.0245C53.4017 23.9679 53.4489 23.9112 53.4961 23.864L53.6094 23.7413C53.6471 23.7036 53.6755 23.6752 53.7132 23.6375L54.0436 23.3165C54.1286 23.241 54.2135 23.1749 54.3079 23.0994L54.4401 23.005C54.4495 22.9956 54.4684 22.9861 54.4779 22.9767C54.6478 23.156 54.8743 23.2882 55.1292 23.3637L55.2236 23.4109L55.3558 23.3826C55.4124 23.3732 55.6106 23.2976 55.7617 23.2316C55.9788 23.1372 56.111 22.9484 56.1204 22.9295C56.1393 22.9106 56.2714 22.7313 56.2809 22.533C56.2903 22.4764 56.2903 22.4292 56.2998 22.3914C56.3092 22.3159 56.3281 22.2404 56.3092 22.146C56.2809 22.0421 56.2242 21.9572 56.2148 21.9477C56.1393 21.8061 56.0354 21.674 55.9222 21.589C55.8938 21.5513 55.8278 21.4852 55.705 21.4285C55.5634 21.353 55.3463 21.2869 55.3369 21.2869C55.3274 21.2869 55.1292 21.2209 54.8743 21.2114C54.6855 21.2114 54.7044 21.2209 54.6383 21.2397C54.5723 21.2397 54.3646 21.2586 54.1852 21.3153C54.0059 21.3625 53.8265 21.4569 53.7699 21.4946L53.5716 21.6079C53.4867 21.6551 53.4017 21.7117 53.3167 21.7684L53.2129 21.8345C53.1563 21.8817 53.0902 21.9194 53.0336 21.9666L52.9014 22.0705C52.8448 22.1082 52.7976 22.1554 52.7504 22.1932L52.3916 22.5141C52.3067 22.5897 52.2217 22.6652 52.1462 22.7501L52.0707 22.8351C52.0235 22.8823 51.9763 22.9389 51.9385 22.9956L51.6081 23.4204C51.5704 23.477 51.5326 23.5242 51.4948 23.5808L51.2022 24.0151C51.1644 24.0717 51.1267 24.1189 51.0984 24.1756L50.7868 24.7325L49.6352 27.3002C49.6069 27.3568 49.588 27.4134 49.5691 27.4701L49.5125 27.6494C49.4936 27.6966 49.4747 27.7438 49.4558 27.791L49.3992 27.9232C49.3614 28.0082 49.3331 28.1026 49.3048 28.1875L49.2953 28.2064C49.1349 28.2442 49.0027 28.2914 48.9366 28.3197C48.7573 28.3291 48.1626 28.348 47.9926 28.3763C47.8605 28.3952 47.6339 28.4235 47.5584 28.4235H47.5206C47.5206 28.4235 47.0675 28.499 46.8787 28.5368C46.7749 28.5557 46.7749 28.5557 46.756 28.5557H46.7088C46.6522 28.5557 46.5483 28.5745 46.4067 28.5934C46.3029 28.6029 46.1141 28.6217 45.9064 28.6312L46.1802 27.9232L46.3407 27.5834L46.4162 27.3946C46.4539 27.3002 46.5011 27.1963 46.5483 27.1019L46.5861 27.0264C46.6239 26.9603 46.6522 26.8848 46.6805 26.8187L47.0487 26.0541C47.0864 25.9786 47.1242 25.9031 47.1714 25.8275L47.4074 25.4027C47.4357 25.3461 47.4734 25.2895 47.5112 25.2328L47.7755 24.8175C47.8133 24.7608 47.8416 24.7136 47.8888 24.657L47.9738 24.5437C48.0115 24.4871 48.0587 24.4304 48.1059 24.3832L48.2192 24.2605C48.2475 24.2228 48.2853 24.185 48.3136 24.1567L48.644 23.8357C48.729 23.7602 48.8139 23.6847 48.9083 23.6186L49.0405 23.5242C49.0499 23.5148 49.0688 23.5053 49.0782 23.4959C49.2481 23.6752 49.5502 23.8074 49.8145 23.8735L49.9089 23.9207L50.0411 23.8924C50.0977 23.8829 50.2865 23.8168 50.447 23.7413C50.6736 23.6375 50.8057 23.4392 50.8057 23.4392C50.8246 23.4204 50.9568 23.241 50.9662 23.0428C50.9662 22.9956 50.9756 22.9484 50.9851 22.9012C50.9945 22.8256 51.0134 22.7501 50.9945 22.6652C50.9662 22.5613 50.919 22.4858 50.9001 22.4575C50.8246 22.3159 50.7208 22.1837 50.6075 22.0988C50.5697 22.061 50.5131 21.9949 50.3904 21.9383C50.2488 21.8628 50.0222 21.7967 50.0222 21.7967C50.0128 21.7967 49.8145 21.7306 49.5597 21.7212C49.3614 21.7212 49.3142 21.7306 49.2387 21.7495C49.1726 21.7589 48.9744 21.7684 48.795 21.825C48.5779 21.8911 48.3797 22.0044 48.3797 22.0044L48.1814 22.1177C48.087 22.1649 48.0115 22.2215 47.9266 22.2781L47.8227 22.3537C47.7566 22.3914 47.7 22.4386 47.6434 22.4858L47.5112 22.5897C47.4546 22.6274 47.4074 22.6746 47.3602 22.7124L47.0015 23.0239C46.9165 23.0994 46.8315 23.1749 46.756 23.2599L46.6805 23.3448C46.6333 23.392 46.5861 23.4487 46.5483 23.5053L46.2179 23.9301C46.1802 23.9868 46.1424 24.034 46.1047 24.0906L45.812 24.5248C45.7743 24.572 45.7459 24.6287 45.7082 24.6853L45.5666 24.9213L45.0851 25.8936L44.2544 27.8005C44.2261 27.8571 44.2072 27.9138 44.1884 27.9704L44.1317 28.1498C44.1128 28.197 44.094 28.2442 44.0751 28.2914L44.0184 28.4235C43.9807 28.5085 43.9524 28.6029 43.924 28.6878V28.6973C43.3293 28.6029 42.914 28.8861 42.8385 28.9333C42.593 29.0654 42.4703 29.2542 42.4042 29.3486L42.3853 29.3769C42.357 29.4147 42.2815 29.4808 42.1965 29.528C42.1588 29.5469 41.9794 29.6224 41.8378 29.679C41.7434 29.7168 41.6585 29.7545 41.6301 29.7734C41.5924 29.7829 41.5357 29.7923 41.4508 29.8301H41.4414C41.4225 29.7923 41.413 29.764 41.4036 29.7262C41.3847 29.4619 41.3092 29.2542 41.2337 29.0465C41.2054 28.9805 41.1865 28.9144 41.1582 28.8294C41.0166 28.4235 40.2519 28.0931 40.1009 28.027C39.5439 27.8005 38.8926 27.8099 38.3545 28.0554L38.1468 28.1498C38.0902 28.1686 38.043 28.197 37.9863 28.2253C37.5804 28.4046 37.2595 28.6595 37.0518 28.9805C36.9196 29.1881 36.712 29.3675 36.4571 29.528C36.3155 29.6129 36.1928 29.7073 36.0795 29.8017C35.8813 29.9528 35.7019 30.1038 35.4281 30.1888C35.3621 30.2077 35.2677 30.2454 35.1827 30.302C35.0505 30.3964 34.9467 30.5097 34.8712 30.5947L34.8334 30.6324C34.739 30.7363 34.6824 30.859 34.6824 30.9912C34.6729 31.1894 34.6446 31.4065 34.6163 31.5764C34.6163 31.5953 34.5974 31.6236 34.5785 31.652C34.3803 31.8974 34.2953 32.1617 34.2104 32.4449L34.1821 32.5393C34.116 32.6054 34.0593 32.6715 33.9933 32.7375C33.6818 33.0396 33.2098 33.37 32.7472 33.7004C32.5962 33.8043 32.4546 33.9081 32.313 34.0119C32.0392 34.2102 31.7655 34.3706 31.4823 34.5122C31.0008 34.7482 30.5949 34.9559 30.1607 35.2108C30.0663 35.2674 29.9624 35.3146 29.8303 35.3524C29.7076 35.3902 29.6132 35.4374 29.5188 35.494C29.481 35.5129 29.4432 35.5318 29.4055 35.5412C29.3677 35.5601 29.3205 35.5695 29.2733 35.5884C29.1412 35.6356 28.9901 35.6828 28.8391 35.7678C28.7164 35.8433 28.5842 35.881 28.4048 35.9377C28.3576 35.9565 28.301 35.9754 28.2727 35.9849C28.1972 35.9943 28.1405 36.0226 28.065 36.0415C28.0556 36.0415 27.8857 36.0698 27.6685 36.1453C27.5364 36.1925 27.4137 36.2303 27.2815 36.2681L27.1116 36.3058C26.4319 36.4852 25.9788 36.5985 25.2425 36.7401C25.0726 36.7684 24.997 36.7778 24.7327 36.7778C24.7138 36.7778 24.6761 36.7684 24.6478 36.7684L24.61 36.7589C24.525 36.7495 24.4495 36.7401 24.4118 36.7306C24.2041 36.7212 24.0531 36.674 23.9209 36.5985C23.2884 36.2303 23.0713 35.8999 22.8542 35.3524C22.7409 35.0598 22.6937 34.7105 22.7126 34.3046C22.722 34.2007 22.722 34.078 22.7315 33.9553L22.7503 33.6532C22.7598 33.4267 22.8353 33.0396 22.9014 32.8131C23.0996 32.1428 23.5055 30.8968 23.9303 30.0944C23.9681 30.0094 24.0059 29.9339 24.0436 29.8489C24.0814 29.7545 24.1191 29.6601 24.1663 29.5846C24.4212 29.207 24.7044 28.7822 24.9876 28.4707C25.1858 28.197 25.4124 27.961 25.6578 27.7155C25.8561 27.5078 26.0638 27.2907 26.262 27.0547L26.4319 26.9603C26.6301 26.7715 26.7245 26.6771 26.8378 26.6016C27.0266 26.46 27.206 26.2995 27.3853 26.1296C27.6119 25.9219 27.8479 25.7048 28.1311 25.516C28.1783 25.4783 28.2444 25.4405 28.3293 25.3839C28.452 25.3083 28.5653 25.2423 28.6408 25.1667L29.7264 24.3077C29.8869 24.1944 30.5855 23.8263 30.7082 23.798C30.7365 23.7885 30.7648 23.7885 30.7931 23.7791C30.8875 23.7508 31.0008 23.7319 31.1707 23.6941C31.3595 23.6564 31.5483 23.6658 31.7371 23.713C31.7938 23.7224 31.841 23.7413 31.8976 23.7508C32.2469 23.8263 32.4357 23.8735 32.5018 24.4965L32.5112 24.5909C32.5301 24.8458 32.464 25.1195 32.3318 25.3744C32.2941 25.4499 32.2563 25.5255 32.228 25.6104C32.1808 25.7143 32.1431 25.8275 32.0675 25.9314C31.8882 26.2146 31.8127 26.3184 31.6333 26.5922C31.52 26.7526 31.4634 26.8282 31.3123 26.9792C31.0858 27.2152 30.8309 27.4984 30.6138 27.8194C30.5288 27.9515 30.3967 28.0742 30.1984 28.2158C29.953 28.3857 29.7642 28.5462 29.8114 28.9333C29.8303 29.0937 29.9341 29.2353 30.104 29.3392C30.2834 29.443 30.5194 29.4997 30.7365 29.4808C31.2085 29.443 31.4162 29.2542 31.5767 29.1126C31.605 29.0843 31.6333 29.0654 31.6711 29.0371C31.6899 29.0182 31.7088 29.0088 31.7183 28.9899L31.8504 28.8294C31.9731 28.735 32.0581 28.6689 32.1336 28.5745C32.1431 28.5651 32.1525 28.5557 32.1808 28.5368C32.3507 28.4046 32.6245 28.1781 33.0304 27.4229C33.1437 27.2624 33.2475 27.0925 33.3702 26.8565C33.4552 26.7149 33.5402 26.5827 33.6251 26.4223C33.6912 26.3184 33.7478 26.2051 33.8139 26.1013C33.9933 25.7992 34.0877 25.4971 34.0971 25.1951C34.1065 24.9307 34.0971 24.6381 34.0688 24.336L34.0405 24.0906C34.0216 23.9679 33.965 23.8074 33.8706 23.5714C33.6157 22.92 32.9171 22.4197 32.0864 22.297C31.9259 22.2781 31.7843 22.2687 31.6522 22.2781C31.6333 22.2781 31.605 22.2781 31.5767 22.2781C31.4917 22.2781 31.3784 22.2781 31.2368 22.3065C31.133 22.3253 31.0386 22.3442 30.9631 22.3631C30.4533 22.4575 30.0096 22.6935 29.6037 22.92L28.7636 23.3637C28.6597 23.4109 28.4992 23.5148 28.2727 23.6658C28.0273 23.8357 27.7629 24.0056 27.4986 24.185L27.4325 24.2322C27.121 24.4399 26.8095 24.6381 26.5263 24.8363C26.3753 24.9402 26.2526 25.0629 26.1582 25.1667C26.0166 25.3178 25.8372 25.4594 25.6673 25.601C25.5823 25.6671 25.4974 25.7426 25.4218 25.7992C25.167 26.0163 25.0442 26.1391 24.8271 26.3467L23.8359 27.3757C23.7227 27.4984 23.6188 27.6211 23.515 27.7438C23.4678 27.8099 23.4206 27.8666 23.3734 27.9232C23.2412 28.0837 23.1091 28.2442 22.9769 28.4518L22.7126 28.8861C22.5804 29.0937 22.4483 29.3203 22.3067 29.5563C21.6648 30.4814 21.4382 31.416 21.2116 32.4071L21.1644 32.6054C21.1644 32.6148 21.155 32.6337 21.155 32.6431L21.1267 32.8036C21.0889 33.0113 21.0795 33.0868 21.0795 33.1151C20.9756 33.7476 21.0417 34.3423 21.1078 34.9654L21.1456 35.2863C21.1644 35.5034 21.2116 35.6828 21.2872 35.8527C21.5326 36.4285 21.9668 36.9383 22.2028 37.1932C22.3916 37.4009 22.6371 37.5708 22.9391 37.7124C22.9863 37.7407 23.0335 37.7596 23.0807 37.7879C23.3828 37.9672 23.8454 38.0805 24.1475 38.1088C24.374 38.1277 24.6194 38.1372 24.8554 38.1372C25.1292 38.1372 25.3935 38.1277 25.6484 38.1088C27.3853 37.9578 28.0367 37.7407 29.2356 37.3348C29.5188 37.2309 29.9624 37.0327 30.2267 36.9194C30.3589 36.8628 30.5005 36.8061 30.6327 36.7495C30.8498 36.6551 31.0858 36.5607 31.2463 36.4757C31.6239 36.2869 31.8221 36.1737 31.992 36.0698L32.0958 35.9943C32.1714 35.9471 32.2752 35.8905 32.3885 35.8338L32.4168 35.8149C32.615 35.7111 32.8322 35.5978 33.0587 35.4562C33.1154 35.4185 33.2192 35.3524 33.3325 35.2769C33.4174 35.2108 33.5213 35.1447 33.6251 35.0786C33.644 35.2014 33.6723 35.3241 33.7101 35.4468C33.8517 35.966 34.4275 36.3436 35.0789 36.353H35.1166C35.5603 36.3436 36.0134 36.3058 36.4004 36.2303C36.7308 36.1642 37.0518 36.0509 37.3539 35.8716C37.9203 35.5318 38.4489 35.1636 38.9303 34.7671C39.2513 34.5028 39.5439 34.1913 39.8082 33.8326C39.8271 33.8043 39.8554 33.7665 39.8932 33.7193C39.9121 33.691 40.1103 33.4361 40.2802 33.2379C40.3841 33.1246 40.4879 32.9924 40.5918 32.8319C40.6767 32.7092 40.7711 32.5771 40.875 32.4543C41.1865 32.0484 41.5074 31.6236 41.6113 31.0667C41.6396 31.0478 41.6962 31.0195 41.7906 30.9723C41.8473 30.9534 42.2154 30.859 42.3193 30.8401C42.4325 30.8118 42.5553 30.7929 42.6497 30.7457C42.678 30.7363 42.6969 30.7268 42.7063 30.7268C42.7157 30.7268 42.7346 30.7174 42.7818 30.708C42.9045 30.6796 43.0084 30.6513 43.0933 30.6041C43.1311 30.5758 43.1972 30.5475 43.2727 30.5097C43.2821 30.5003 43.301 30.5003 43.3105 30.4908L43.2349 30.7174C43.216 30.7646 43.2066 30.8118 43.1877 30.859L43.1311 31.0667C43.1217 31.1139 43.1028 31.1611 43.0933 31.2083L43.065 31.3499C43.0461 31.4348 43.0273 31.5198 42.9989 31.5953L42.9895 31.6236C42.9517 31.7464 42.914 31.8691 42.8951 31.9918L42.7913 32.4921L42.7157 32.7564C42.7063 32.8131 42.6874 32.8697 42.678 32.9169L42.5081 33.8798L42.4137 34.5783C42.4137 34.5972 42.4042 34.6066 42.4042 34.6161C42.3948 34.6822 42.3759 34.8143 42.357 34.9182C42.357 34.9182 42.3193 35.1542 42.3476 35.2769L42.3098 35.6639C42.3098 35.6734 42.3381 35.8527 42.3193 35.966C42.2909 36.1359 42.3381 36.3436 42.3381 36.3719C42.3381 36.3719 42.4137 36.6362 42.4137 36.6645C42.442 36.7401 42.4892 36.8533 42.5269 36.9194C42.5269 36.9194 42.6685 37.146 42.6969 37.1837C42.7346 37.2309 42.7818 37.2781 43.1028 37.4197C43.1122 37.4197 43.2255 37.4575 43.3388 37.4764C43.4143 37.4858 43.4804 37.4953 43.5653 37.4858C43.6503 37.4858 43.7447 37.4764 43.9901 37.297C44.2261 37.1271 44.2828 36.9572 44.3016 36.9289C44.3205 36.8817 44.3677 36.6929 44.3394 36.5135C44.3111 36.3247 44.2072 36.0604 44.2072 36.0604C44.2072 36.0604 44.1695 35.9754 44.1506 35.8905C44.1317 35.8338 44.1223 35.6922 44.1223 35.6167C44.1223 35.579 44.1223 35.5506 44.1223 35.5129L44.1317 35.3241C44.1317 35.258 44.1412 35.1825 44.1506 35.1164L44.2639 34.2762C44.2733 34.2102 44.2828 34.1346 44.3016 34.0686L44.33 33.9458C44.3488 33.8609 44.3677 33.7759 44.3677 33.691L44.3772 33.5871C44.3866 33.5022 44.4055 33.4172 44.4244 33.3323L44.4432 33.2379C44.4621 33.1623 44.481 33.0774 44.5093 33.0019L44.5471 32.8791C44.566 32.8131 44.5943 32.7375 44.6132 32.662L44.7264 32.19C44.7453 32.1051 44.7642 32.0201 44.7925 31.9352L44.9624 31.3782L45.3023 30.4153C45.3211 30.3681 45.34 30.3304 45.3589 30.2832L45.4061 30.1888L46.5578 30.0472L47.2563 29.9245L47.615 29.8961L48.1531 29.8867L48.2853 29.8773C48.408 29.8678 48.5685 29.8489 48.7384 29.8301L48.6157 30.1888C48.5968 30.236 48.5874 30.2832 48.5685 30.3304L48.5118 30.538C48.5024 30.5852 48.4835 30.6324 48.4741 30.6796L48.4458 30.8212C48.4269 30.9062 48.408 30.9912 48.3797 31.0667L48.3702 31.095C48.323 31.2177 48.2947 31.3404 48.2758 31.4632L48.172 31.9635L48.0965 32.2278C48.0776 32.2844 48.0682 32.3316 48.0587 32.3883L47.8888 33.3606L47.7944 34.0497C47.7944 34.0591 47.785 34.078 47.785 34.0875C47.7755 34.1535 47.7566 34.2857 47.7378 34.3895C47.7378 34.3895 47.7 34.6255 47.7283 34.7482L47.6906 35.1353C47.6906 35.1447 47.7189 35.3241 47.7 35.4374C47.6717 35.6167 47.7189 35.8338 47.7189 35.8433C47.7189 35.8433 47.7944 36.1076 47.8038 36.1453C47.8322 36.2209 47.8699 36.3247 47.9171 36.3908C47.9171 36.3908 48.0587 36.6173 48.0776 36.6551C48.1059 36.6929 48.1626 36.7495 48.4835 36.8911C48.493 36.8911 48.6062 36.9289 48.7195 36.9477C48.795 36.9572 48.8611 36.9666 48.9461 36.9572C49.0216 36.9572 49.1349 36.9477 49.3803 36.7684C49.6069 36.5985 49.6729 36.4285 49.6824 36.4002C49.6918 36.3625 49.7579 36.1737 49.7201 35.9849C49.6918 35.7866 49.588 35.5318 49.588 35.5223C49.5785 35.5034 49.5502 35.4279 49.5313 35.3618C49.5219 35.3052 49.503 35.1825 49.503 35.0881C49.503 35.0598 49.4936 35.022 49.503 34.9842L49.5125 34.7954C49.5125 34.7199 49.5219 34.6538 49.5313 34.5878L49.6446 33.7382C49.6541 33.6721 49.6635 33.5966 49.6824 33.5305L49.7107 33.4078C49.7296 33.3228 49.7485 33.2379 49.7579 33.1529L49.7673 33.0491C49.7768 32.9641 49.7957 32.8791 49.8145 32.8036L49.8334 32.7092C49.8523 32.6337 49.8712 32.5487 49.8995 32.4638L49.9373 32.3411C49.9656 32.2655 49.9845 32.1995 50.0033 32.1239L50.1166 31.652C50.1355 31.567 50.1544 31.482 50.1827 31.4065L50.7963 29.5846L53.0524 29.3203L53.4206 29.2637C53.4678 29.2542 53.6471 29.2353 53.8359 29.1315C53.8548 29.1221 53.8643 29.1126 53.8737 29.1032C53.7793 29.207 53.6849 29.3203 53.5999 29.4336C53.5527 29.4902 53.4017 29.6979 53.3639 29.7545L53.2412 29.9339C53.1468 30.0661 53.0524 30.2171 52.9486 30.3776C52.6937 30.7835 52.4388 31.4254 52.3916 31.6897C52.3916 31.7086 52.3728 31.7936 52.335 31.9163C52.25 32.3883 52.4105 32.8603 52.5427 33.2473L52.5804 33.3511C52.7504 33.7476 53.0241 34.078 53.4395 34.3612C54.1475 34.7105 55.0914 34.9087 56.1015 34.9087C56.5074 34.9087 56.9039 34.8804 57.3004 34.8238C58.4615 34.6538 59.8303 33.8326 60.7554 33.0868C60.9064 33.2756 61.0952 33.4361 61.3312 33.5966C62.3319 34.078 63.8045 34.2385 65.2016 34.0214C66.9385 33.7476 69.4212 31.9635 69.7233 31.3971L69.7422 31.3593C69.8838 31.1044 70.0726 30.7268 70.0537 30.5192C70.0159 30.4342 69.9215 30.3492 69.8554 30.3115ZM39.2324 32.0201L39.1003 32.1617C38.9587 32.3127 38.8454 32.4355 38.7038 32.6148C38.6283 32.6903 38.5622 32.7753 38.4961 32.8603C38.2979 33.1151 38.0335 33.3417 37.807 33.5211C37.7031 33.5966 37.6276 33.691 37.5427 33.7759C37.4483 33.8703 37.3728 33.9647 37.2878 34.0214C37.1368 34.1158 36.9668 34.2196 36.7969 34.3518C36.7686 34.3801 36.6459 34.4556 36.5043 34.5406C36.3438 34.635 36.0228 34.7388 35.8246 34.7671L35.5509 34.8049C35.4753 34.8143 35.4187 34.7766 35.3998 34.7671C35.3243 34.7105 35.2865 34.6161 35.3149 34.5217L35.3526 34.3895C35.4281 34.0969 35.5509 33.8043 35.7113 33.5116C35.768 33.4078 35.8246 33.2945 35.8812 33.1812C36.0134 32.9169 36.155 32.6337 36.3344 32.3883L36.2211 32.3505L36.3438 32.3883L36.6742 31.8596C36.8252 31.9163 36.9952 31.9824 37.1934 32.0296C37.3822 32.0768 37.5993 32.124 37.7504 32.1334C38.0524 32.1523 38.1751 32.1428 38.3073 32.1334L38.4017 32.1239C38.6377 32.0862 39.0153 32.0201 39.374 31.9257C39.3079 31.9446 39.2702 31.9823 39.2324 32.0201ZM39.6478 30.4342C39.3646 30.5475 38.9587 30.6513 38.4961 30.7268C38.3923 30.7457 38.2412 30.6796 38.1468 30.6419L38.1185 30.6324C38.0619 30.6041 38.1185 30.4814 38.2979 30.2737L38.3356 30.2265C38.3923 30.1605 38.4583 30.0944 38.5244 30.0094C38.5999 29.9245 38.6849 29.8395 38.7604 29.7451C38.902 29.5752 38.987 29.5185 39.0908 29.4808C39.0908 29.4808 39.1286 29.4713 39.2513 29.4713C39.3268 29.4713 39.4023 29.4713 39.4873 29.4808C39.5817 29.4808 39.6666 29.5563 39.695 29.6507C39.7233 29.764 39.7422 29.8961 39.761 30.0094C39.7705 30.0661 39.7799 30.1321 39.7894 30.1793C39.8082 30.2926 39.7516 30.3965 39.6478 30.4342ZM54.5439 32.3316L54.1663 32.5299C54.138 32.5204 54.1003 32.4827 54.1097 32.4166C54.1947 31.7558 54.5156 31.1894 54.7988 30.6891C54.8932 30.5286 54.9782 30.3776 55.0442 30.236C55.0631 30.2076 55.233 29.9622 55.2897 29.8773C55.6012 29.4525 56.111 28.9993 56.6302 28.6878L56.6679 28.6689C56.7906 28.6029 56.9039 28.5368 57.0738 28.5085C57.0927 28.7917 56.9417 29.056 56.7906 29.3014L56.7434 29.3864C56.6962 29.4808 56.6301 29.5941 56.5641 29.7168C56.2054 30.387 55.5918 31.5104 55.0914 31.9446C54.9026 32.0956 54.7705 32.19 54.5439 32.3316ZM62.3979 31.5576L62.0298 31.7558C62.0015 31.7464 61.9637 31.7086 61.9731 31.6425C62.0392 30.9817 62.3507 30.4153 62.6339 29.915C62.7189 29.7545 62.8038 29.6035 62.8794 29.4525C62.8982 29.4147 63.0587 29.1787 63.1248 29.0937C63.4269 28.6595 63.9272 28.2158 64.4464 27.8854L64.4841 27.8666C64.5974 27.8005 64.7107 27.7344 64.8806 27.6966C64.8995 27.9798 64.7579 28.2442 64.6163 28.499L64.5691 28.584C64.5219 28.6595 64.4747 28.7539 64.4275 28.8577L64.3992 28.9144C64.0499 29.5846 63.4552 30.7174 62.9643 31.1611C62.7566 31.3216 62.615 31.416 62.3979 31.5576Z" fill="white"/>
+                </svg>                
+            </label>
+            <label for="product07" title="파워에이드">
+              <svg width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M46.5882 0.767295C46.0428 0.254224 45.3911 0 44.6191 0H32.3424C31.5705 0 30.9142 0.254224 30.3733 0.767295C29.8325 1.28037 29.5645 1.91824 29.5645 2.69015V6.314C29.5645 7.0813 29.8325 7.72379 30.3733 8.23686C30.9142 8.74994 31.5705 9.00416 32.3424 9.00416H44.6191C45.3957 9.00416 46.0474 8.74994 46.5882 8.23686C47.129 7.72379 47.3971 7.08592 47.3971 6.314V2.69478C47.3971 1.92286 47.129 1.28037 46.5882 0.767295ZM43.3064 4.83026C43.3064 5.18617 43.1077 5.36182 42.7102 5.36182H34.3762C33.9833 5.36182 33.7753 5.18617 33.7753 4.83026V4.17852C33.7753 3.82261 33.9787 3.63772 34.3762 3.63772H42.7102C43.1077 3.63772 43.3064 3.82261 43.3064 4.17852V4.83026Z" fill="white"/>
+                <path d="M26.9663 6.49892H24.0127V0.041626H20.0283V18.0176H24.0127V10.4787H26.9663V6.49892Z" fill="white"/>
+                <path d="M47.7622 10.0626H29.3379V13.8159H36.6411V18.0175H40.6208V13.8159H47.7622V10.0626Z" fill="white"/>
+                <path d="M18.4243 3.92894V0.0739746H0V3.92894H2.87504V13.9084H0V17.7634H2.87504H6.90565H11.6065H15.6371H18.4243V13.9084H15.6371V3.92894H18.4243ZM11.6065 13.9084H6.90565V3.92894H11.6065V13.9084Z" fill="white"/>
+                <path d="M49.9713 0.041626V14.5416H44.6465L48.1086 18.0176H49.9713H50.4659H53.9511V0.041626H49.9713Z" fill="white"/>
+                <path d="M47.6834 21.7061C46.5925 20.6753 45.2798 20.1622 43.7221 20.1622H35.6101C34.057 20.1622 32.7443 20.6799 31.658 21.7061C30.5672 22.7415 30.0264 24.0264 30.0264 25.5703V32.8457C30.0264 34.3988 30.5672 35.6838 31.658 36.7145C32.7443 37.7453 34.0616 38.2584 35.6101 38.2584H43.7267C45.2798 38.2584 46.5925 37.7453 47.688 36.7145C48.7789 35.6838 49.3197 34.3988 49.3197 32.8457V25.5703C49.3151 24.0264 48.7743 22.7368 47.6834 21.7061ZM45.3214 32.8457C45.3214 33.7979 44.7899 34.274 43.7221 34.274H35.6101C34.5516 34.274 34.0154 33.7979 34.0154 32.8457V25.5749C34.0154 24.6227 34.5516 24.1374 35.6101 24.1374H43.7267C44.7945 24.1374 45.326 24.6227 45.326 25.5749V32.8457H45.3214Z" fill="white"/>
+                <path d="M13.6634 21.7061C12.5725 20.6753 11.2598 20.1622 9.70674 20.1622H5.58369C4.03523 20.1622 2.71789 20.6799 1.63166 21.7061C0.540804 22.7368 0 24.0264 0 25.5703V32.8457C0 34.3988 0.540804 35.6838 1.62704 36.7145C2.71327 37.7453 4.03061 38.2584 5.57907 38.2584H9.70674C11.2598 38.2584 12.5725 37.7453 13.6634 36.7145C14.7542 35.6838 15.2951 34.3988 15.2951 32.8457V25.5703C15.2951 24.0264 14.7542 22.7368 13.6634 21.7061ZM11.3014 32.8457C11.3014 33.7979 10.7699 34.274 9.70674 34.274H5.58369C4.52519 34.274 3.98901 33.7979 3.98901 32.8457V25.5795C3.98901 24.6273 4.52981 24.142 5.58369 24.142H9.70674C10.7745 24.142 11.3014 24.6273 11.3014 25.5795V32.8457Z" fill="white"/>
+                <path d="M55.3098 20.3009V38.2769H51.3301V20.3009H55.3098Z" fill="white"/>
+                <path d="M26.8274 20.3009V38.2769H22.8477V20.3009H26.8274Z" fill="white"/>
+                <path d="M83.6398 24.4517V20.4719H63.5885H59.886H59.3545V31.3435H59.886H63.5885H83.6398V27.3683H63.5885V24.4517H83.6398Z" fill="white"/>
+                <path d="M59.1699 34.0475H83.9406V37.9764H59.1699V34.0475Z" fill="white"/>
+                <path d="M17.3797 20.3009V26.7582H12.9238V30.738H17.3797V38.2769H21.3595V20.3009H17.3797Z" fill="white"/>
+                <path d="M87.9061 38.1058C86.7459 38.1058 85.8076 37.1675 85.8076 36.0073C85.8076 34.8471 86.7459 33.9135 87.9061 33.9135C89.0617 33.9135 90.0046 34.8471 90.0046 36.0073C90 37.1675 89.0617 38.1058 87.9061 38.1058ZM87.9061 34.3895C87.0048 34.3895 86.3114 35.0829 86.3114 36.0073C86.3114 36.941 87.0048 37.6482 87.9061 37.6482C88.8075 37.6482 89.5008 36.9457 89.5008 36.0073C89.5008 35.0829 88.8028 34.3895 87.9061 34.3895ZM88.2805 37.1305L87.883 36.2662H87.6334V37.1305H87.1388V34.9026H88.0494C88.4978 34.9026 88.7936 35.2354 88.7936 35.596C88.7936 35.901 88.6041 36.0998 88.3776 36.1968L88.8398 37.1305H88.2805ZM87.9893 35.3047H87.6288V35.8872H87.9893C88.1742 35.8872 88.2944 35.7531 88.2944 35.596C88.2944 35.4388 88.1742 35.3047 87.9893 35.3047Z" fill="white"/>
+                </svg>                
+            </label>
+            <label for="product08" title="토레타">
+              <svg width="90" height="24" viewBox="0 0 90 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2256 16.2732H24.7854V12.2631H7.67106C7.65519 12.2631 7.63931 12.2631 7.62344 12.2631V10.3533H23.611V6.37489H7.62873V4.4968H24.1189V0.518433H3.1372V12.5541C3.1372 14.9506 4.55502 16.2732 7.13673 16.2732H11.7394V18.8708H0V22.8809H28.3565V18.8708H16.2256V16.2732Z" fill="white"/>
+                <path d="M47.2321 7.57583H43.7881V11.6177H47.2321V23.5792H51.7131V0H47.2321V7.57583Z" fill="white"/>
+                <path d="M57.3271 0H52.8408V23.5792H57.3271V0Z" fill="white"/>
+                <path d="M65.9397 14.9559C65.9291 14.94 65.9027 14.8606 65.9027 14.6596V11.6758H77.5468V7.69745H65.9027V4.72955H78.2187V0.75647H61.4111V14.7231C61.4111 17.4053 63.0723 19.003 65.8498 19.003H78.3721V14.9929H66.3576C66.0508 14.9929 65.945 14.9506 65.9397 14.9559Z" fill="white"/>
+                <path d="M85.1859 7.9779V0H80.6943V23.5792H85.1859V11.988H90.0001V7.9779H85.1859Z" fill="white"/>
+                <path d="M34.7735 14.9348C34.7577 14.9348 34.7418 14.9348 34.7259 14.9348V11.7764H42.5081C42.5663 11.75 42.6245 11.7235 42.6826 11.6971V7.1103V2.17437V0.761841H34.3926H30.2397V3.30122V4.77195H34.2286H38.1594V7.7716H30.2344V15.2257C30.2344 16.5325 30.6576 17.5112 31.4565 18.1408C32.123 18.6645 33.0594 18.9449 34.2339 18.9449H35.7734H40.5771H42.9577V16.4954V14.9348H38.1699H34.7735Z" fill="white"/>
+                </svg>                
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 미디어 -->
+      <section id="media">
+        <h2>Media</h2>
+        <p class="section_txt">함께하면 더 즐거운 코카콜라!<br>
+          코카콜라의 다양한 홍보자료를 감상하세요.
+        </p>
+        <div class="m_wrap">
+          <div class="m_slide01">
+            <div class="m_title">
+              <h3>CF광고보기</h3>
+              <p>재미있는 이야기가 담겨있는<br>
+                여러 브랜드의 CF를 감상해보세요
+              </p>
+              <a href="#none" title="전체보기">전체보기 <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+  
+            <!-- Swiper -->
+            <div class="swiper mediaSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_v_01.jpg" alt="스프라이트 CF광고">
+                    <div class="ad_title">
+                      <h4>스프라이트</h4>
+                      <p>스프라이트 시켜, 매운맛 식혀<br>
+                        세계1등 사이다, 스프라이트
+                      </p>
+                      <span>2024.03.25</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_v_02.png" alt="조지아 cf광고">
+                    <div class="ad_title">
+                      <h4>조지아</h4>
+                      <p>우리가 깨어 있는 한 모든 일상은<br>
+                        놀라움의 연속이니까<br>
+                        깨우다 오늘을 새롭게 조지아
+                      </p>
+                      <span>2024.03.20</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_v_03.png" alt="코카콜라한류 cf광고">
+                    <div class="ad_title">
+                      <h4>코카콜라한류</h4>
+                      <p>코카-콜라와 JYP STRAYKIDS, ITZY,<br> 
+                        NMIXX 가 함께한 ‘Like Magic’ 뮤직 비디오를<br> 
+                        지금 바로 느껴 보세요!
+                      </p>
+                      <span>2024.02.20</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_v_04.jpg" alt="코카콜라제로레몬 cf광고">
+                    <div class="ad_title">
+                      <h4>코카콜라제로레몬</h4>
+                      <p>맛있는 걸 선택해!<br>
+                        코카-콜라 제로 레몬
+                      </p>
+                      <span>2024.03.05</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_v_05.png" alt="코카콜라제로 cf광고">
+                    <div class="ad_title">
+                      <h4>코카콜라제로</h4>
+                      <p>맛있는 걸 선택해!<br>
+                        코카-콜라 제로
+                      </p>
+                      <span>2024.01.25</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+
+          <div class="m_slide02">
+            <div class="m_title">
+            <h3>인쇄광고보기</h3>
+            <p>오랜 역사를 엿볼 수 있는<br>
+              코카-콜라 인쇄광고를 감상해보세요
+            </p>
+            <a href="#none" title="전체보기">전체보기 <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+  
+            <div class="swiper mediaSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_p_01.png" alt="코카콜라 제로제로 인쇄광고">
+                    <div class="ad_title">
+                      <h4>코카콜라제로제로</h4>
+                      <p>칼로리 제로 카페인 제로<br>
+                        코카-콜라 제로제로
+                      </p>
+                      <span>2023.11.06</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_p_02.png" alt="코카콜라 제로레몬 인쇄광고">
+                    <div class="ad_title">
+                      <h4>코카콜라제로레몬</h4>
+                      <p>천연 레몬향<br>
+                        코카-콜라 제로 레몬
+                      </p>
+                      <span>2023.11.06</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_p_03.png" alt="환타 제로 파인애플 인쇄광고">
+                    <div class="ad_title">
+                      <h4>환타 제로</h4>
+                      <p>가볍게 즐기는<br>
+                        환타 제로 파인애플향!
+                      </p>
+                      <span>2023.04.19</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_p_04.png" alt="파워에이드 제로 인쇄광고">
+                    <div class="ad_title">
+                      <h4>파워에이드 제로</h4>
+                      <p>파워풀한 수분충전은 그대로<br>
+                        칼로리는 제로 ZERO
+                      </p>
+                      <span>2023.03.17</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <img src="./images/ad_p_05.png" alt="씨그램 인쇄광고">
+                    <div class="ad_title">
+                      <h4>씨그램</h4>
+                      <p>감출 수 없는 짜릿함<br>
+                        NEW 씨그램
+                      </p>
+                      <span>2022.06.17</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 서포트 -->
+      <section id="support">
+        <h2>Support</h2>
+        <p class="section_txt">고객경험을 기반으로 고객감동의 가치 제공<br>
+          고객과의 행복한 미래를 만들어 갑니다
+        </p>
+        <div class="s_wrap">
+          <a href="#none" title="공지사항 바로가기">
+            <div class="s_box">
+                <svg width="142" height="142" viewBox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M71.0965 0.789551C57.1529 0.789551 43.5225 4.9243 31.9288 12.6709C20.3352 20.4176 11.299 31.4282 5.96302 44.3104C0.627043 57.1925 -0.769092 71.3677 1.95117 85.0434C4.67142 98.7191 11.3859 111.281 21.2455 121.141C31.1051 131 43.667 137.715 57.3427 140.435C71.0183 143.155 85.1935 141.759 98.0757 136.423C110.958 131.087 121.968 122.051 129.715 110.457C137.462 98.8636 141.596 85.2331 141.596 71.2895C141.576 52.598 134.142 34.6778 120.925 21.4608C107.708 8.24391 89.7881 0.809767 71.0965 0.789551ZM71.0965 130.04C59.4769 130.04 48.1182 126.594 38.4568 120.138C28.7954 113.683 21.2653 104.507 16.8186 93.7722C12.372 83.037 11.2085 71.2244 13.4754 59.828C15.7423 48.4316 21.3377 37.9634 29.554 29.747C37.7703 21.5307 48.2386 15.9353 59.635 13.6684C71.0313 11.4015 82.844 12.565 93.5792 17.0116C104.314 21.4583 113.49 28.9884 119.945 38.6498C126.401 48.3112 129.846 59.6699 129.846 71.2895C129.829 86.8658 123.634 101.799 112.62 112.813C101.606 123.827 86.6727 130.022 71.0965 130.04Z" fill="white"/>
+                  <path d="M71.0965 30.1646C69.5383 30.1646 68.044 30.7835 66.9422 31.8853C65.8405 32.9871 65.2215 34.4814 65.2215 36.0395V83.0395C65.2215 84.5977 65.8405 86.092 66.9422 87.1938C68.044 88.2956 69.5383 88.9145 71.0965 88.9145C72.6546 88.9145 74.149 88.2956 75.2507 87.1938C76.3525 86.092 76.9715 84.5977 76.9715 83.0395V36.0395C76.9715 34.4814 76.3525 32.9871 75.2507 31.8853C74.149 30.7835 72.6546 30.1646 71.0965 30.1646Z" fill="white"/>
+                  <path d="M76.9715 106.54C76.9715 103.295 74.3412 100.665 71.0965 100.665C67.8518 100.665 65.2215 103.295 65.2215 106.54C65.2215 109.784 67.8518 112.415 71.0965 112.415C74.3412 112.415 76.9715 109.784 76.9715 106.54Z" fill="white"/>
+                </svg>
+                <h3>공지사항</h3>
+                <p>코카콜라음료의 새로운<br>
+                  소식을 알려드립니다
+                </p>
+                <p class="button">더보기 <i class="fa-solid fa-chevron-right"></i></p>
+            </div>
+          </a>
+          <a href="#none" title="FAQ 바로가기">
+            <div class="s_box">
+                <svg width="141" height="141" viewBox="0 0 141 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M141 94V141H94C76.6394 141 61.4819 131.512 53.345 117.477C57.8629 117.441 62.2632 116.942 66.5167 116.019C72.9851 124.074 82.8904 129.25 94 129.25H129.25V94C129.25 82.8904 124.074 72.9851 116.019 66.5167C116.936 62.2632 117.441 57.8629 117.477 53.345C131.512 61.4819 141 76.6394 141 94ZM105.75 52.875C105.75 23.7174 82.0326 0 52.875 0C23.7174 0 0 23.7174 0 52.875V105.75H52.875C82.0326 105.75 105.75 82.0326 105.75 52.875ZM11.75 52.875C11.75 30.2034 30.1975 11.75 52.875 11.75C75.5525 11.75 94 30.2034 94 52.875C94 75.5466 75.5525 94 52.875 94H11.75V52.875ZM58.75 61.7169C58.75 59.8839 60.2775 57.1755 61.3761 56.5704C67.9796 52.922 71.534 45.4549 70.2239 37.9819C68.9725 30.8614 63.1269 25.0216 56.024 23.782C50.8188 22.8361 45.5489 24.2579 41.5539 27.6184C37.5471 30.9789 35.2559 35.9021 35.2559 41.125H47.0059C47.0059 39.3801 47.7696 37.741 49.1091 36.6189C50.4604 35.485 52.1994 35.0268 53.9971 35.3499C56.2943 35.7494 58.2565 37.7057 58.656 40.0088C59.2024 43.1284 57.4105 45.3374 55.7068 46.2715C50.7424 49.0034 47.0059 55.6421 47.0059 61.711V64.6191H58.7559V61.711L58.75 61.7169ZM58.75 70.5H47V82.25H58.75V70.5Z" fill="white"/>
+                </svg>
+                <h3>FAQ</h3>
+                <p>코카콜라 상식, 건강, 제품특성, 채용에<br>
+                  대해서 더 알아보세요
+                </p>
+                <p class="button">더보기 <i class="fa-solid fa-chevron-right"></i></p>
+            </div>
+          </a>
+          <a href="#none" title="고객센터 바로가기">
+            <div class="s_box">
+                <svg width="111" height="141" viewBox="0 0 111 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M34.5151 55.8122C34.5151 59.0493 35.2682 62.1161 36.6096 64.8421C33.7267 68.5316 31.9323 73.1082 31.691 78.0961C26.1547 72.2916 22.7482 64.4426 22.7482 55.8181C22.7482 35.7784 41.1163 19.9393 61.926 24.2046C74.1754 26.7191 84.1007 36.5715 86.713 48.7856C87.5014 52.4752 87.6484 56.0883 87.2484 59.5428C86.9071 62.4686 84.3361 64.6306 81.3826 64.6306H81.1178C77.6348 64.6306 75.1873 61.5344 75.5697 58.0799C75.8286 55.7593 75.6933 53.3212 75.0991 50.836C73.3458 43.4746 67.3329 37.5115 59.9492 35.8136C46.4997 32.7292 34.5092 42.9048 34.5092 55.8181L34.5151 55.8122ZM11.6285 48.204C13.2406 38.8451 17.8238 30.3146 24.931 23.6582C33.9268 15.2393 45.7054 11.0798 58.0547 11.8435C81.312 13.3475 99.4977 33.6927 99.2271 58.0506C99.1153 68.2496 90.5608 76.3689 80.353 76.3689H66.1974C64.7619 71.4985 60.3022 67.9147 54.9601 67.9147C48.4589 67.9147 43.1932 73.1729 43.1932 79.6648C43.1932 86.1567 48.4589 91.4148 54.9601 91.4148C58.1253 91.4148 60.9906 90.1517 63.1027 88.1189H80.353C96.9384 88.1189 110.759 74.9295 110.994 58.3737C111.429 27.7002 88.3545 2.02635 58.8137 0.122845C43.1402 -0.893534 28.2728 4.42336 16.8883 15.0924C8.06903 23.3468 2.20324 34.2743 0.0910837 46.0303C-0.550211 49.6023 2.27972 52.8805 5.90981 52.8805C8.68679 52.8805 11.1637 50.9477 11.6285 48.2099V48.204ZM55.1071 99.8748C33.3678 99.8748 14.5585 113.34 8.30437 133.374C7.3336 136.47 9.06922 139.766 12.1698 140.736C15.2645 141.67 18.5651 139.966 19.5359 136.876C24.1779 122.012 38.7982 111.625 55.1013 111.625C71.4043 111.625 86.0305 122.012 90.6667 136.876C91.455 139.39 93.7731 141 96.2853 141C96.8678 141 97.4503 140.912 98.0386 140.736C101.139 139.766 102.869 136.47 101.904 133.374C95.6499 113.34 76.8406 99.8748 55.1013 99.8748H55.1071Z" fill="white"/>
+                </svg>
+                <h3>고객센터</h3>
+                <p>고객의 소리에 언제나 귀를 기울이며<br>
+                  고객의 요구사항을 적극적으로 해결합니다
+                </p>
+                <p class="button">더보기 <i class="fa-solid fa-chevron-right"></i></p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터영역 시작 -->
+    <footer>
+      <div class="f_wrap">
+        <div class="f_top">
+          <nav>
+            <ul>
+              <li><a href="#" title="">정도경영</a></li>
+              <li><a href="#" title="">법적고지</a></li>
+              <li><a href="#" title="">이메일주소무단수집거부</a></li>
+              <li><a href="#" title="" class="bold">개인정보처리방침</a></li>
+              <li><a href="#" title="">CONTACT US</a></li>
+            </ul>
+          </nav>
+          <p class="sns">
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+          </p>
+        </div>
+        <div class="f_middle">
+          <div class="call">
+            <p>코카콜라음료 고객상담실</p>
+            <p class="phone">080-000-0000</p>
+          </div>
+          <div class="call">
+            <p>전화주문/장비AS/세금계산서/신규거래</p>
+            <p class="phone">1588-0000</p>
+          </div>
+          <select name="family_site" id="family_site">
+            <option value="">FAMILY SITE</option>
+            <option value="https://www.coca-cola.com/kr/ko">코카-콜라 본사</option>
+            <option value="https://www.lghnh.com/index.jsp">LG생활건강</option>
+            <option value="https://ethics.lg.co.kr/index.do">사이버 신문고CPS</option>
+            <option value="https://cps.lgcare.com/irj/portal/anonymous?guest_user=guest_ko">열린구매</option>
+          </select>
+        </div>
+        <div class="f_bottom">
+          <h2><a href="index.html" title="하단로고">
+            <svg width="150" height="48" viewBox="0 0 150 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_222_698)">
+              <path d="M65.0044 47.0638C61.4101 44.5454 57.0518 43.4227 53.0677 43.5787C49.0524 43.7502 47.2514 46.7441 47.2514 46.7441C45.4348 43.5787 41.8639 41.6451 36.3361 41.7075C27.3933 41.7932 18.5285 45.9333 11.4959 45.9333C4.75957 45.9333 -0.152323 41.7075 0.00361036 34.1681C0.292087 20.9839 11.4257 9.11741 19.7448 3.74551C24.5319 0.689214 28.5472 -0.238589 31.1747 0.0498875C33.0849 0.268194 35.3849 2.49804 33.9347 5.73365C31.814 10.5052 28.8669 10.1232 28.9604 7.83875C29.0228 6.34959 30.0052 5.4062 30.7381 4.89162C31.2214 4.57195 32.0557 4.49399 32.4767 4.47839C32.8899 4.12754 33.2174 1.50007 29.7947 2.37329C26.3641 3.23872 22.2397 6.59908 18.3102 10.934C14.3729 15.2846 8.24468 23.5178 6.73993 32.1488C6.03043 36.1484 6.49823 43.4461 15.9946 43.3604C24.0407 43.298 35.8994 38.004 46.7992 38.1054C51.0328 38.1288 54.7206 39.2671 57.5898 41.0447C60.42 42.799 63.8037 45.3251 65.0044 47.0638ZM67.5851 23.1514H69.238C69.238 23.1514 60.9735 35.0959 56.3033 34.5579C53.6992 34.2694 54.4711 31.0338 54.4711 31.0338C54.4711 31.0338 50.7989 35.3142 47.4541 34.4488C44.4056 33.7003 46.3704 28.6247 46.3704 28.6247C46.0273 28.7572 39.4235 36.1874 34.7923 34.4176C29.9428 32.562 32.4533 26.3168 33.3811 24.4534C34.1608 22.8707 35.0262 21.3348 35.0262 21.3348C35.0262 21.3348 34.2777 21.5453 33.8255 21.6544C33.3655 21.7558 32.656 21.8961 32.656 21.8961C32.656 21.8961 30.3638 25.6229 28.9448 27.4863C27.5492 29.3497 21.5848 35.7508 18.0841 34.4488C14.5756 33.2091 15.4332 28.2894 17.4058 24.3755C20.6102 18.0524 28.1963 10.2713 32.7574 11.433C37.3886 12.5947 33.576 20.1107 33.576 20.1107C33.576 20.1107 34.4805 20.2354 36.6791 18.7307C39.8602 16.571 44.0392 10.7391 48.5768 11.4252C50.6897 11.7371 52.6857 13.9124 49.9724 18.0602C49.0992 19.4012 47.6568 20.5863 46.5341 19.409C45.8402 18.6839 46.4405 17.3507 47.1656 16.4463C48.187 15.152 49.6138 15.3236 49.6138 15.3236C49.6138 15.3236 50.3623 13.5927 48.4677 13.6239C46.9161 13.6551 43.0256 17.2337 40.8269 20.8826C38.792 24.2273 35.7357 29.8955 38.8154 31.143C41.6378 32.2813 46.9863 25.9036 49.4734 22.5589C51.9606 19.2375 57.6132 11.6747 62.3535 11.3628C63.9752 11.2537 64.9498 12.7351 64.9498 12.7351L65.5112 11.8774H70.2437C70.2437 11.8774 61.3166 26.8002 60.6149 27.9463C60.0691 28.8196 59.344 30.8077 61.3633 29.685C63.3671 28.5623 67.5851 23.1514 67.5851 23.1514ZM30.8082 21.6466C30.7225 21.6077 29.5218 21.2568 28.3601 20.5317C27.2062 19.7676 26.6604 18.6683 26.6136 18.5982C26.5824 18.5202 26.5279 18.5826 26.4811 18.6371C26.4343 18.6995 26.177 19.0348 24.4851 21.5063C22.7933 24.0012 20.2905 29.0925 22.6373 29.9501C24.1343 30.5037 26.6604 27.8606 28.0404 26.1219C29.3035 24.5158 30.8082 22.0053 30.8784 21.8494C30.9408 21.709 30.8862 21.67 30.8082 21.6466ZM32.6794 13.7174C31.4242 12.7662 28.2665 14.9649 28.2587 17.2025C28.2353 19.5182 31.1045 20.1809 31.4787 20.1965C31.4787 20.1965 31.8062 20.29 31.9309 20.0171C32.0089 19.83 32.4065 19.1283 32.8432 17.9822C33.2798 16.8283 33.8489 14.5985 32.6794 13.7174ZM56.8335 26.1297C58.7593 23.5022 64.022 14.3178 64.022 14.3178C64.022 14.3178 63.9285 13.6707 63.3203 13.6395C62.5952 13.5927 61.3711 13.8422 58.962 16.8829C56.5294 19.908 54.6504 22.3172 53.2782 24.8277C51.7812 27.5799 51.1185 29.4979 51.984 30.0359C52.2257 30.184 52.5843 30.1918 52.8962 30.1138C53.4497 29.9735 54.1904 29.4199 55.1806 28.2504C55.664 27.7202 56.2098 26.9952 56.8335 26.1297ZM78.1418 11.9008H73.6431L71.0858 16.0252H75.5923L78.1418 11.9008ZM137.178 42.5651C136.726 42.5651 136.344 42.7132 136.024 43.0329C135.705 43.3448 135.541 43.7424 135.541 44.1868C135.541 44.639 135.705 45.0288 136.024 45.3719C136.336 45.6838 136.718 45.8319 137.178 45.8319C137.63 45.8319 138.028 45.6838 138.324 45.3719C138.644 45.0366 138.808 44.6468 138.808 44.1868C138.808 43.7502 138.644 43.3526 138.324 43.0329C138.012 42.7132 137.63 42.5651 137.178 42.5651ZM139.065 44.179C139.065 44.7092 138.893 45.1614 138.519 45.52C138.145 45.8865 137.708 46.0892 137.178 46.0892C136.648 46.0892 136.211 45.8943 135.829 45.52C135.463 45.1614 135.284 44.7014 135.284 44.179C135.284 43.6722 135.463 43.2122 135.845 42.8536C136.211 42.4793 136.648 42.3 137.178 42.3C137.7 42.3 138.145 42.4793 138.519 42.8536C138.901 43.2122 139.065 43.6722 139.065 44.179ZM137.669 43.7658C137.669 43.6332 137.63 43.5163 137.529 43.4695C137.451 43.4149 137.287 43.3915 137.085 43.3915H136.773V44.14H137.1C137.264 44.14 137.373 44.1244 137.459 44.0932C137.599 44.0387 137.669 43.9451 137.669 43.7658ZM136.414 43.1576H137.139C137.396 43.1576 137.599 43.1732 137.708 43.2122C137.919 43.3058 138.028 43.4929 138.028 43.7424C138.028 43.9295 137.966 44.0776 137.833 44.1478C137.755 44.2024 137.654 44.2414 137.521 44.257C137.685 44.2882 137.81 44.3427 137.88 44.4519C137.942 44.5688 137.997 44.678 137.997 44.7793V44.9431V45.0834C138.012 45.1536 138.012 45.177 138.02 45.1926V45.216H137.677V45.2004C137.661 45.1926 137.661 45.1926 137.661 45.177V45.1146V44.9431C137.661 44.6936 137.607 44.5454 137.474 44.4675C137.389 44.4129 137.264 44.3895 137.061 44.3895H136.773V45.2082H136.406V43.1576H136.414ZM144.569 4.50178C141.264 6.64586 136.632 8.57944 132.212 8.15842C131.089 9.31232 129.888 10.6533 128.695 12.1191C136.375 13.6395 143.104 8.87571 146.674 4.81365C148.904 2.28753 150.004 0.0187008 150.004 0.0187008C150.004 0.0187008 147.875 2.3655 144.569 4.50178ZM131.416 39.4152C130.769 40.4132 130.044 42.3858 132.157 41.1617C134.722 39.6803 138.363 34.1525 138.363 34.1525H140.016C140.016 34.1525 137.849 37.5908 135.003 40.7251C132.407 43.5942 129.241 46.2217 127.019 45.9722C124.407 45.676 125.21 42.2298 125.21 42.2298C125.21 42.2298 121.476 46.2139 118.903 45.9333C115.418 45.5512 116.47 41.2397 116.47 41.2397C116.47 41.2397 112.533 46.0814 109.859 45.9333C105.641 45.7071 106.693 40.5536 107.87 36.9593C108.494 35.0101 109.079 33.5288 109.079 33.5288C109.079 33.5288 108.658 33.6223 107.761 33.7627C107.286 33.8328 106.436 33.8796 106.436 33.8796C106.436 33.8796 104.682 36.9671 103.278 38.8461C101.883 40.6861 95.9416 47.095 92.4331 45.8163C89.1818 44.6312 90.2422 39.6491 92.1446 35.7196C94.889 29.9735 102.623 21.6934 107.114 22.7772C111.73 23.9077 107.216 32.3437 107.216 32.3437C107.216 32.3437 107.216 32.3749 107.27 32.4138C107.371 32.445 107.59 32.4528 108.159 32.3593C109.056 32.1877 109.866 31.8525 109.866 31.8525C109.866 31.8525 114.513 22.0989 119.659 15.7212C124.789 9.32792 135.065 -1.67318 139.096 1.00888C140.078 1.6482 139.626 3.90144 138.301 6.63807C137.724 6.80959 137.108 6.98892 136.492 7.09807C137.381 5.49196 137.966 4.15093 138.137 3.19974C138.737 -0.098249 131.05 6.84078 125.545 14.3256C120.041 21.8026 116.751 28.5779 116.751 28.5779C116.751 28.5779 117.866 27.9464 119.589 26.5585C121.398 25.1084 123.877 22.8317 126.59 20.0405C128.391 18.1693 130.528 15.7991 132.531 13.1639C133.116 13.1327 133.709 13.0781 134.27 12.9768C132.056 16.0019 129.701 18.7385 127.729 20.7422C125.538 22.9643 123.16 25.3579 121.086 27.0965C117.811 29.8565 115.269 31.4159 115.269 31.4159C115.269 31.4159 110.443 41.1071 113.071 41.7464C114.599 42.1051 117.632 37.4271 117.632 37.4271C117.632 37.4271 121.6 31.3691 123.994 28.6636C127.253 24.9446 130.052 22.8006 132.859 22.7538C134.496 22.746 135.455 24.4612 135.455 24.4612L136.235 23.2761H140.983C140.959 23.2761 132.11 38.2769 131.416 39.4152ZM104.806 33.5054C104.713 33.4742 103.684 32.9908 102.615 32.1176C101.555 31.2209 101.009 30.2074 100.97 30.1216C100.931 30.0514 100.892 30.106 100.83 30.184C100.783 30.2308 100.604 30.4023 98.8965 32.8972C97.2202 35.3844 94.6317 40.4912 96.9707 41.3722C98.4833 41.918 100.986 39.2749 102.35 37.544C103.613 35.9067 104.799 33.864 104.861 33.7081C104.931 33.5755 104.877 33.5366 104.806 33.5054ZM107.184 29.3186C107.621 28.1802 108.167 25.9426 106.997 25.0694C105.765 24.1182 102.6 26.3168 102.584 28.5623C102.569 30.8623 104.822 31.8993 105.36 32.0396C105.672 32.1254 105.765 32.1176 105.929 31.8681C106.023 31.7121 106.74 30.4491 107.184 29.3186ZM134.371 26.1453C134.473 25.9816 134.512 25.8335 134.512 25.8335C134.512 25.8335 134.418 25.1785 133.802 25.1473C133.077 25.124 132.079 25.2565 129.459 28.1569C126.863 31.0338 125.273 33.5522 123.9 36.0627C122.411 38.8071 121.811 40.842 122.661 41.3488C122.902 41.5047 123.277 41.5281 123.573 41.458C124.158 41.3098 124.813 40.7719 125.826 39.6024C126.302 39.0566 126.824 38.3081 127.432 37.4271C129.163 35.0647 133.506 27.6501 134.371 26.1453ZM144.569 4.50178C141.264 6.64586 136.632 8.57944 132.212 8.15842C131.089 9.31232 129.888 10.6533 128.695 12.1191C136.375 13.6395 143.104 8.87571 146.674 4.81365C148.904 2.28753 150.004 0.0187008 150.004 0.0187008C150.004 0.0187008 147.875 2.3655 144.569 4.50178ZM122.988 10.0686C119.355 8.2052 116.704 5.92077 113.944 4.50958C111.293 3.15296 109.593 2.5916 107.473 2.88787C107.114 2.91906 106.584 3.10618 106.584 3.10618C106.584 3.10618 107.691 6.84858 103.317 13.1561C98.8965 19.5415 94.889 19.5026 93.7429 17.7327C92.55 15.8927 94.0859 12.1191 96.6666 8.75096C99.3643 5.23467 104.097 2.31872 104.097 2.31872C104.097 2.31872 102.584 1.39871 98.8653 3.48822C95.2632 5.55433 89.0181 10.435 83.233 18.6683C77.4635 26.8782 76.3251 31.4237 75.4909 34.9789C74.6411 38.5498 75.4129 42.3546 79.358 42.3546C83.3343 42.3546 87.9188 36.3278 89.2208 34.2305C91.6222 30.3165 93.1971 24.3365 89.9069 25.1707C88.293 25.5684 86.9832 27.3772 86.1567 29.1003C85.3147 30.8545 84.9872 32.5542 84.9872 32.5542C84.9872 32.5542 83.615 33.0298 81.7828 34.4098C79.9506 35.782 78.7499 37.1074 78.7499 37.1074C78.7499 37.1074 78.7655 34.2616 81.0343 29.6382C83.2954 25.0304 87.4744 22.9097 89.8212 22.7304C91.9497 22.5511 94.7097 24.3521 92.3707 31.0182C90.0317 37.7 83.1238 45.7695 75.8418 45.8787C69.1444 46.0034 64.7237 37.4271 74.0641 22.4887C84.3869 5.95976 96.5185 0.876334 100.464 0.307177C104.393 -0.261979 105.68 1.48447 105.68 1.48447C105.68 1.48447 108.962 -0.0358758 113.149 0.244804C117.967 0.548874 121.678 3.96381 126.582 6.34959C125.312 7.60485 124.103 8.87571 122.988 10.0686ZM105.087 3.60517C105.087 3.60517 102.288 4.72789 98.9978 8.32215C95.731 11.9476 93.8364 15.9785 95.2399 17.0544C95.7856 17.4676 97.0331 17.5144 99.3097 15.4951C101.072 13.9046 102.873 11.8228 104.105 8.83673C105.547 5.27365 105.087 3.63635 105.087 3.60517Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_222_698">
+              <rect width="150" height="47.0607" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+          </a></h2>
+          <address>코카-콜라음료(주) 대표이사 : 000 | 주소 : 경상남도 00시 00로 000 (00동)<br>사업자등록번호 : 000-00-0000<br>
+            COPYRIGHT ⓒ sunje lee. ALL RIGHTS RESERVED.</address>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="./script/main.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    // 메인 슬라이드
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 8000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      on: {
+        beforeTransitionStart: function() { //동영상 초기화
+          document.querySelector(".swiper-slide-active video").pause();
+          document.querySelector(".swiper-slide-active video").currentTime=0;
+          document.querySelector(".swiper-slide-active video").play();
+        }
+      }
+    });
+    // 미디어 슬라이드
+    var swiper = new Swiper(".mediaSwiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+</html>
