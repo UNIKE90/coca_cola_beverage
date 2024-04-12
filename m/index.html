@@ -133,6 +133,19 @@
       <section>
         <h2>Company</h2>
         <div class="c_wrap">
+          <div class="swiper cSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                회사소개
+              </div>
+              <div class="swiper-slide">
+                코카콜라소개
+              </div>
+              <div class="swiper-slide">
+                정도경영
+              </div>
+            </div>
+          </div>
           <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper cSwiper2">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -164,21 +177,6 @@
                   </p>
                   <a href="#none" title="바로가기 버튼" class="button">바로가기 <i class="fa-solid fa-chevron-right"></i></a>
                 </div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-          </div>
-          <div class="swiper cSwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                회사소개
-              </div>
-              <div class="swiper-slide">
-                코카콜라소개
-              </div>
-              <div class="swiper-slide">
-                정도경영
               </div>
             </div>
           </div>
@@ -479,8 +477,7 @@
                   </a>
                 </div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
 
@@ -550,8 +547,7 @@
                   </a>
                 </div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -675,20 +671,16 @@
     var swiper2 = new Swiper(".cSwiper2", {
       loop: true,
       spaceBetween: 0,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
       thumbs: {
         swiper: swiper1,
       },
     });
     // 3. 제품 슬라이드
-    var swiper = new Swiper(".pSwiper", {
+    var swiper3 = new Swiper(".pSwiper", {
       slidesPerView: 4,
     });
     // 4. 미디어 슬라이드
-    var swiper = new Swiper(".mediaSwiper", {
+    var swiper4 = new Swiper(".mediaSwiper", {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
@@ -696,9 +688,9 @@
         delay: 5000,
         disableOnInteraction: false
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
     });
   </script>

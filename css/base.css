@@ -122,7 +122,7 @@ header a{
   position: absolute;
   width: 800px;
   height: 600px;
-  left: 50%; top: 50%;
+  left: 50%; top: 45%;
   transform: translate(-50%, -50%);
   color: var(--color02);
   text-align: center;
@@ -145,6 +145,7 @@ header a{
   text-align: left;
 }
 .sm_grid a{color: var(--color02);}
+.sm_grid a:hover{text-decoration: underline;}
 .sm_grid h3{
   font-size: var(--font_size_16);
   color: var(--color03);

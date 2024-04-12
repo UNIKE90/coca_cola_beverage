@@ -6,13 +6,13 @@
   --color03:#E71D2B;
   --color04:#999999;
   --color05:#cccccc;
-  --sub_color01:#00A84E;
-  --sub_color02:#F7941E;
+  --sub_color01:#008335;
+  --sub_color02:#D53A12;
   --sub_color03:#9E1F30;
-  --sub_color04:#EB6101;
+  --sub_color04:#2D1109;
   --sub_color05:#402020;
-  --sub_color06:#00A1EC;
-  --sub_color07:#CFDB00;
+  --sub_color06:#276BAD;
+  --sub_color07:#116A49;
   --font_size_13:13px;
   --font_size_16:16px;
   --font_size_20:20px;
@@ -108,7 +108,7 @@ section h2{
   position: relative;
 }
 .cSwiper {
-  height: 10vh;
+  height: 5%;
   box-sizing: border-box;
   padding: 10px 0;
 }
@@ -124,20 +124,29 @@ section h2{
 .c_wrap{
   height: 80%;
 }
-.cSwiper2 .swiper-button-prev, .cSwiper2 .swiper-button-next{
-  color: var(--color01);
-}
 /* 회사소개 콘텐츠 */
 .c_cont{
   width: 100%;
   height: auto;
   text-align: center;
 }
+.c_cont h3{
+  font-size: var(--font_size_16);
+  font-weight: normal;
+  color: var(--color03);
+  line-height: 30px;
+}
+.c_cont .c_title{
+  font-size: var(--font_size_20);
+  font-weight: bold;
+}
 .c_cont img{
   width: 80%;
 }
 .c_cont .button{
   margin: 10px auto;
+  font-size: var(--font_size_13);
+  margin-bottom: 80px;
 }
 
 /* 제품소개 */
@@ -170,10 +179,18 @@ section h2{
   height: 100%;
   object-fit: cover;
 }
+.p_cont .p_p01{
+  line-height: 30px;
+  margin-top: 10px;
+}
+.p_cont h3{
+  font-size: var(--font_size_20);
+  margin-bottom: 20px;
+}
 .p_cont .button{
   color: var(--color02);
   border: 1px solid var(--color02);
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
 }
 
 /* 버튼 스와이퍼 */
@@ -222,27 +239,38 @@ section h2{
 /* 미디어 스와이퍼 */
 #media{
   text-align: center;
+  padding-bottom: 40px;
 }
 #media h3{
   line-height: 36px;
+  font-size: var(--font_size_16);
 }
 .mediaSwiper{
   margin-bottom: 50px;
+  overflow:visible;
 }
 .mediaSwiper .swiper-slide a{
   position: relative;
 }
 .mediaSwiper img{
-  width: 250px;
+  width: 300px;
   height: 200px;
   object-fit: cover;
 }
-.mediaSwiper .swiper-button-next, .mediaSwiper .swiper-button-prev{
-  color: var(--color03);
+.mediaSwiper .swiper-pagination{
+  bottom: -20px;
+}
+.mediaSwiper .swiper-pagination-bullet{
+  transition : 0.3s;
+}
+.mediaSwiper .swiper-pagination-bullet-active{
+  background: var(--color03);
+  width: 25px;
+  border-radius: 10px;
 }
 .ad_title{
   position: absolute;
-  width: 250px;
+  width: 300px;
   height: 200px;
   top: 0;
   left: 0;
@@ -269,6 +297,7 @@ section h2{
   background: var(--color04);
   color: var(--color02);
   text-align: center;
+  padding-bottom: 40px;
 }
 #support a{
   color: var(--color02);
