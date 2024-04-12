@@ -136,7 +136,7 @@ footer{
   background: var(--color01);
   color: var(--color05);
   padding: 40px;
-  padding-bottom:140px;
+  padding-bottom:100px;
   box-sizing: border-box;
 }
 footer a{
